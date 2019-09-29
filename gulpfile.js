@@ -7,16 +7,16 @@ const reload = browserSync.reload;
 gulp.task('browser-sync', function () {
   browserSync.init({
     server: {
-      baseDir: "./build"
+      baseDir: "./"
     }
   });
 });
 
 gulp.task('serve', function () {
   browserSync.init({
-      server: {
-          baseDir: "./build"
-      }
+    server: {
+      baseDir: "./"
+    }
   });
   gulp.watch('src/sass/*.scss', gulp.series('sass'));
   gulp.watch('src/*.html', gulp.series('minify'));
@@ -25,17 +25,15 @@ gulp.task('serve', function () {
 gulp.task('sass', () => {
   return gulp.src('src/sass/*.scss')
     .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
-    .pipe(gulp.dest('build/css'))
+    .pipe(gulp.dest('./css'))
     .pipe(browserSync.stream());
 });
 
 gulp.task('minify', () => {
   return gulp.src('src/*.html')
     .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest('build'))
+    .pipe(gulp.dest('./'))
     .pipe(browserSync.stream());
 });
 
 gulp.task('default', gulp.series('sass', 'minify', 'serve'));
-
-
