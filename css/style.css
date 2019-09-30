@@ -17,6 +17,11 @@
   justify-content: center;
 }
 
+.section__main {
+  height: 100vh;
+  background-color: #FCDCDE;
+}
+
 body {
   font-family: 'Tajawal', sans-serif;
   margin: 0px;
