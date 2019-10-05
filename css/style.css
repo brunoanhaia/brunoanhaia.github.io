@@ -2,19 +2,50 @@
 @import url(navbar.css);
 .image--profile {
   border-radius: 100%;
-  width: 30%;
-  max-width: 200px;
+  width: 100%;
+  max-width: 300px;
 }
 
 .div__image--profile {
   border: 0px;
   display: flex;
   justify-content: center;
+  padding: 40px;
+}
+
+.div__image--profile figure figcaption {
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 30px 0px 0px 0px;
+}
+
+figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .section__gh--projects {
+  height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section__gh--projects h1 {
+  padding: 40px 0px 40px 0px;
+  font-size: 1.5rem;
+  left: 1px;
+}
+
+.section__gh--projects li {
+  font-size: 1.3rem;
+  line-height: 2.5rem;
+}
+
+.section__gh--projects li a {
+  text-decoration: none;
+  color: #FA868E;
 }
 
 .section__main {

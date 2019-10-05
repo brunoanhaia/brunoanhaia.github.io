@@ -31,7 +31,7 @@ gulp.task('sass', () => {
 
 gulp.task('minify', () => {
   return gulp.src('src/*.html')
-    .pipe(htmlmin({ collapseWhitespace: true }))
+    //.pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest('./'))
     .pipe(browserSync.stream());
 });

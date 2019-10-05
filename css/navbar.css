@@ -1,7 +1,11 @@
 .navbar {
-  background-color: #00E2CA;
+  background-color: white;
   width: 100%;
-  position: fixed;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #2EBEAF;
 }
 
 /* TOGGLE MENU */
@@ -49,7 +53,7 @@
 /* SMARTPHONES */
 @media only screen and (max-width: 519px) {
   .navbar {
-    background: rgba(0, 0, 0, 0.5);
+    background: white;
     padding: 1em;
     margin: 0;
     height: 100%;
@@ -74,7 +78,7 @@
     left: 0;
     bottom: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.4);
+    background: white;
     z-index: -1;
   }
   .menu li {
