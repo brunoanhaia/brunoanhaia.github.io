@@ -74,20 +74,22 @@ figure {
 .section__resume {
   @extend .section__gh--projects;
   background-color: $color-primary-1;
-  height: 130vh;
+  height: unset;
   pre {
     font-weight: 600;
     font-size: 1.1rem;
     white-space: pre-wrap;
+    margin: 30px;
+    font-family: 'Courier New', Courier, monospace;
   }
   .wrapper {
-    height: 80vh;
+    margin: 30px;
+    height: unset;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
     align-items: center;
-    font-family: 'Courier New', Courier, monospace;
   }
 }
 
