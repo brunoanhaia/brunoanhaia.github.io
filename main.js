@@ -4,6 +4,8 @@ const init = { method: 'GET', headers: headers, mode: 'cors', cache: 'default' }
 window.onload = () => {
   const section_gh_projects__ul = document.querySelector(".section__gh--projects ul");
   const div_img_profile__figure__figcaption = document.querySelector(".div__image--profile figure figcaption");
+  const div_img_profile__figure__company = document.querySelector(".div__image--profile figure .company");
+  const div_img_profile__figure__image_profile = document.querySelector(".div__image--profile figure .image--profile");
 
   const open = document.querySelector('.open-menu');
   const close = document.querySelector('.close-menu');
@@ -35,9 +37,9 @@ window.onload = () => {
   fetch('https://api.github.com/users/brunoanhaia')
     .then(response => response.json())
     .then(data => {
-      console.log(div_img_profile__figure__figcaption)
       div_img_profile__figure__figcaption.innerHTML += `${data.name}`;
-      
+      div_img_profile__figure__company.innerHTML += `${data.company}`;
+      div_img_profile__figure__image_profile.setAttribute("src",`${data.avatar_url}`);
     })
     .catch(error => console.error(error))
     
@@ -45,7 +47,6 @@ window.onload = () => {
     .then(response => response.json())
     .then(data => {
       data.forEach((e) => {
-        console.log(section_gh_projects__ul)
         section_gh_projects__ul.innerHTML += `<li><a href='${e.html_url}'>${e.name}</li>`;
       });
     })

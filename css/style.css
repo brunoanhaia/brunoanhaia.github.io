@@ -3,14 +3,29 @@
 .image--profile {
   border-radius: 100%;
   width: 100%;
-  max-width: 300px;
+  max-width: 500px;
 }
 
 .div__image--profile {
   border: 0px;
   display: flex;
   justify-content: center;
-  padding: 40px;
+  padding: 0px 40px 0px 40px;
+  margin: 5rem 0px 0px 0px;
+}
+
+.div__image--profile figure .company {
+  font-size: 1.3rem;
+  line-height: 2.5rem;
+}
+
+.div__image--profile figure .company::before {
+  display: inline-block;
+  content: ' ';
+  background-image: url(/img/building-solid.svg);
+  background-size: 1.3rem 1.3rem;
+  height: 1.3rem;
+  width: 1.3rem;
 }
 
 .div__image--profile figure figcaption {
@@ -30,12 +45,18 @@ figure {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
+}
+
+.section__gh--projects .wrapper {
+  height: 80vh;
 }
 
 .section__gh--projects h1 {
   padding: 40px 0px 40px 0px;
-  font-size: 1.5rem;
+  font-size: 2rem;
   left: 1px;
+  font-weight: 600;
 }
 
 .section__gh--projects li {
@@ -51,6 +72,20 @@ figure {
 .section__main {
   height: 100vh;
   background-color: #FCDCDE;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section__main .div__footer--profile {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.section__main .div__footer--profile h1 {
+  font-size: 1.3rem;
+  padding: 30px 0px;
 }
 
 body {
@@ -58,4 +93,12 @@ body {
   margin: 0px;
   border: 0px;
   padding: 0px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html header {
+  position: fixed;
 }
