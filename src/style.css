@@ -22,7 +22,7 @@
 .div__image--profile figure .company::before {
   display: inline-block;
   content: ' ';
-  background-image: url(/img/building-solid.svg);
+  background-image: url(building-solid.svg);
   background-size: 1.3rem 1.3rem;
   height: 1.3rem;
   width: 1.3rem;
