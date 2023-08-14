@@ -1,21 +1,25 @@
-import { MainSectionProps } from './MainSection.type';
+import { useRecoilValue } from 'recoil';
+import { gitHubProfileState } from '../../states/global.state';
 
-export function MainSection({ gitHubProfileData }: MainSectionProps) {
+export function MainSection() {
+	const { name, company, bio, avatarUrl } =
+		useRecoilValue(gitHubProfileState);
+
 	return (
 		<section className="section__main">
 			<div className="div__image--profile">
 				<figure>
 					<img
 						className="image--profile"
-						src={gitHubProfileData.avatarUrl}
+						src={avatarUrl}
 						alt="Me"
 					/>
-					<figcaption>{gitHubProfileData.name}</figcaption>
-					<h1 className="company">{gitHubProfileData.company}</h1>
+					<figcaption>{name}</figcaption>
+					<h1 className="company">{company}</h1>
 				</figure>
 			</div>
 			<div className="div__footer--profile">
-				<h1>Embedded Software Developer</h1>
+				<h1>{bio}</h1>
 			</div>
 		</section>
 	);

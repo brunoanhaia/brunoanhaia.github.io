@@ -1,6 +1,10 @@
-import { ProjectsSectionProps } from './ProjectsSection.type';
+import { useRecoilValue } from 'recoil';
+import { gitHubProfileState } from '../../states/global.state';
+import { GitHubProfileData } from '../../types/global.types';
 
-export function ProjectsSection({ gitHubProfileData }: ProjectsSectionProps) {
+export function ProjectsSection() {
+	const gitHubProfileData =
+		useRecoilValue<GitHubProfileData>(gitHubProfileState);
 	return (
 		<section
 			id="projects"
@@ -9,17 +13,13 @@ export function ProjectsSection({ gitHubProfileData }: ProjectsSectionProps) {
 			<div className="wrapper">
 				<h1>Github projects</h1>
 				<ul className="gh--projects-list">
-					{gitHubProfileData.repositoriesInfo.map(
-						(repositoryInfo) => {
-							return (
-								<li key={repositoryInfo.name}>
-									<a href={repositoryInfo.url}>
-										{repositoryInfo.name}
-									</a>
-								</li>
-							);
-						}
-					)}
+					{gitHubProfileData.repositoriesInfo.map(({ name, url }) => {
+						return (
+							<li key={name}>
+								<a href={url}>{name}</a>
+							</li>
+						);
+					})}
 				</ul>
 			</div>
 		</section>
