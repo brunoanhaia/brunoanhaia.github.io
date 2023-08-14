@@ -20,9 +20,6 @@ export const gitHubProfileState = selector<GitHubProfileData>({
 		return Promise.all([
 			fetch('https://api.github.com/users/brunoanhaia'),
 			fetch('https://api.github.com/users/brunoanhaia/repos'),
-			new Promise(function (resolve) {
-				setTimeout(resolve, 2000);
-			}),
 		])
 			.then(([personalInfo, repositoriesInfo]) =>
 				Promise.all([personalInfo.json(), repositoriesInfo.json()])
