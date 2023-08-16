@@ -4,6 +4,6 @@ export type MenuItem = {
 	text: string;
 };
 
-export type NavbarComponentProps = {
+export type NavbarProps = {
 	items: Array<MenuItem>;
 };

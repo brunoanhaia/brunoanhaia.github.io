@@ -130,4 +130,5 @@ html {
 
 html header {
 	position: fixed;
+	width: 100%;
 }

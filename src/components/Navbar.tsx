@@ -1,53 +1,73 @@
-import { useState } from 'react';
-import { NavbarComponentProps } from './Navbar.type';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import { useBreakpoint } from '../hooks/useBreakpoint';
+import { NavbarProps } from './Navbar.type';
+import { Drawer } from '@mui/material';
+import { Fragment, useState } from 'react';
+import { NavbarItems, NavbarOrientation } from './NavbarItems';
 
-export function Navbar({ items }: NavbarComponentProps) {
-	const [isMenuOpen, setIsMenuOpen] = useState(false);
+export function Navbar(props: NavbarProps) {
+	const { isXs } = useBreakpoint();
+	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+	const toggleDrawer =
+		(open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
+			console.log(event);
+			if (
+				event.type === 'keydown' &&
+				((event as React.KeyboardEvent).key === 'Tab' ||
+					(event as React.KeyboardEvent).key === 'Shift')
+			) {
+				return;
+			}
 
-	const handleOpenMenuClick = () => {
-		setIsMenuOpen(true);
-	};
-
-	const handleCloseMenuClick = () => {
-		setIsMenuOpen(false);
-	};
-
-	const handleMenuItemClick = () => {
-		setIsMenuOpen(false);
-	};
+			setIsDrawerOpen(open);
+		};
 
 	return (
-		<div className="top-bar">
-			<button
-				className="open-menu"
-				onClick={handleOpenMenuClick}
-			>
-				Abrir Menu
-			</button>
-			<nav className={`navbar ${isMenuOpen ? 'menu-active' : ''}`}>
-				<ul className="menu">
-					<button
-						className="close-menu"
-						onClick={handleCloseMenuClick}
-					>
-						Fechar Menu
-					</button>
-					{items.map((item) => {
-						return (
-							<li key={item.href}>
-								<a
-									href={item.href}
-									target={item.target}
-									onClick={handleMenuItemClick}
-									rel="noreferrer"
+		<Fragment>
+			<AppBar position="static">
+				<Toolbar
+					sx={{
+						minHeight: { xs: '60px', sm: '60px' },
+						backgroundColor: 'white',
+						justifyContent: { xm: 'flex-start', sm: 'center' },
+					}}
+				>
+					{isXs ? (
+						<Fragment>
+							<Box>
+								<IconButton
+									size="large"
+									edge="start"
+									color="primary"
+									aria-label="menu"
+									onClick={toggleDrawer(true)}
 								>
-									{item.text}
-								</a>
-							</li>
-						);
-					})}
-				</ul>
-			</nav>
-		</div>
+									<MenuIcon />
+								</IconButton>
+							</Box>
+							<Drawer
+								anchor="left"
+								open={isDrawerOpen}
+								onClose={toggleDrawer(false)}
+							>
+								<NavbarItems
+									items={props.items}
+									orientation={NavbarOrientation.Vertical}
+								/>
+							</Drawer>
+						</Fragment>
+					) : (
+						<NavbarItems
+							items={props.items}
+							orientation={NavbarOrientation.Horizontal}
+						/>
+					)}
+				</Toolbar>
+			</AppBar>
+		</Fragment>
 	);
 }
