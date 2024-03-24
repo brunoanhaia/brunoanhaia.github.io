@@ -75,7 +75,6 @@ figure {
 }
 
 .section__resume {
-	background-color: #b3cdca;
 	height: unset;
 }
 
@@ -99,7 +98,6 @@ figure {
 
 .section__main {
 	height: 100vh;
-	background-color: #fcdcde;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
