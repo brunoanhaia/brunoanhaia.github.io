@@ -2,7 +2,7 @@ import { useRecoilValue } from 'recoil';
 import { gitHubProfileState } from '../../states/global.state';
 import { GitHubProfileData } from '../../types/global.types';
 
-export function ProjectsSection() {
+export const ProjectsSection = () => {
 	const gitHubProfileData =
 		useRecoilValue<GitHubProfileData>(gitHubProfileState);
 	return (
@@ -24,4 +24,4 @@ export function ProjectsSection() {
 			</div>
 		</section>
 	);
-}
+};
