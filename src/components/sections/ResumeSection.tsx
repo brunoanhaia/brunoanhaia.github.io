@@ -88,7 +88,7 @@ const transformWorkArray = (value: ResumeData['work']) => {
 	return value;
 };
 
-export function ResumeSection({ resumeData }: ResumeSectionProps) {
+export const ResumeSection = ({ resumeData }: ResumeSectionProps) => {
 	return (
 		<Box
 			component="section"
@@ -103,4 +103,4 @@ export function ResumeSection({ resumeData }: ResumeSectionProps) {
 			</Box>
 		</Box>
 	);
-}
+};

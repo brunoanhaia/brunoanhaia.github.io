@@ -1,7 +1,7 @@
 import { useRecoilValue } from 'recoil';
 import { gitHubProfileState } from '../../states/global.state';
 
-export function MainSection() {
+export const MainSection = () => {
 	const { name, company, bio, avatarUrl } =
 		useRecoilValue(gitHubProfileState);
 
@@ -23,4 +23,4 @@ export function MainSection() {
 			</div>
 		</section>
 	);
-}
+};

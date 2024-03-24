@@ -8,7 +8,7 @@ import { menuItemList } from './menu.config';
 import { InitialLoading } from './components/InitialLoading';
 import { ResumeSection } from './components/sections/ResumeSection';
 
-function App() {
+const App = () => {
 	return (
 		<div className="App">
 			<Suspense fallback={<InitialLoading />}>
@@ -23,6 +23,6 @@ function App() {
 			</Suspense>
 		</div>
 	);
-}
+};
 
-export default App;
+export { App };

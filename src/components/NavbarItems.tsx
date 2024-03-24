@@ -11,10 +11,10 @@ export type NavbarItemsProps = {
 	orientation: NavbarOrientation | undefined;
 };
 
-export function NavbarItems({
+export const NavbarItems = ({
 	items,
 	orientation = NavbarOrientation.Horizontal,
-}: NavbarItemsProps) {
+}: NavbarItemsProps) => {
 	const flexDirection =
 		orientation === NavbarOrientation.Horizontal ? 'row' : 'column';
 
@@ -39,4 +39,4 @@ export function NavbarItems({
 			))}
 		</List>
 	);
-}
+};

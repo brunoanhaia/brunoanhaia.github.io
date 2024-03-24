@@ -18,7 +18,7 @@ export type BreakpointInfo = {
     active: ScreenSize;
 }
 
-export function useBreakpoint(): BreakpointInfo {
+export const useBreakpoint = (): BreakpointInfo => {
     const { breakpoints } = useTheme();
 
     const breakpointInfo: BreakpointInfo = {

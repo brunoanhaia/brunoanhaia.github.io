@@ -9,7 +9,7 @@ import { Drawer } from '@mui/material';
 import { Fragment, useState } from 'react';
 import { NavbarItems, NavbarOrientation } from './NavbarItems';
 
-export function Navbar(props: NavbarProps) {
+export const Navbar = (props: NavbarProps) => {
 	const { isXs } = useBreakpoint();
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 	const toggleDrawer =
@@ -70,4 +70,4 @@ export function Navbar(props: NavbarProps) {
 			</AppBar>
 		</Fragment>
 	);
-}
+};
