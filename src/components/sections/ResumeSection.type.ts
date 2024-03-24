@@ -4,7 +4,7 @@ export type ResumeSectionProps = {
 
 export type ResumeData = {
 	name: string;
-	age: string;
+	born: Date;
 	education: Education[];
 	work: Work[];
 };
@@ -17,6 +17,10 @@ export type Education = {
 
 export type Work = {
 	company: string;
-	period: string;
-	experience: string;
+	period: {
+		start: Date;
+		end?: Date;
+	};
+	role: string;
+	experience: string[];
 };
