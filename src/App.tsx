@@ -1,27 +1,38 @@
 import './App.css';
 import { MainSection } from './components/sections/MainSection';
 import { resumeData } from './resume.data';
-import { Suspense } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { ProjectsSection } from './components/sections/ProjectsSection';
 import { Navbar } from './components/Navbar';
 import { menuItemList } from './menu.config';
 import { InitialLoading } from './components/InitialLoading';
 import { ResumeSection } from './components/sections/ResumeSection';
+import { Box } from '@mui/material';
+import { useGetFirebaseTranslations } from './utils/use-firebase';
 
 const App = () => {
+	const [state, setState] = useState({});
+	const translations = useGetFirebaseTranslations('pt-br');
+
+	useEffect(() => {
+		translations.then((value) => {
+			setState(value);
+		});
+	}, [translations]);
+
 	return (
-		<div className="App">
+		<Box className="App">
 			<Suspense fallback={<InitialLoading />}>
-				<header>
+				<Box>
 					<Navbar items={menuItemList} />
-				</header>
-				<div className="content">
+				</Box>
+				<Box className="content">
 					<MainSection />
 					<ProjectsSection />
 					<ResumeSection resumeData={resumeData} />
-				</div>
+				</Box>
 			</Suspense>
-		</div>
+		</Box>
 	);
 };
 
