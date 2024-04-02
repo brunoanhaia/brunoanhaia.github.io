@@ -6,12 +6,12 @@ import { ProjectsSection } from './components/sections/ProjectsSection';
 import { Navbar } from './components/Navbar';
 import { menuItemList } from './menu.config';
 import { InitialLoading } from './components/InitialLoading';
-import { ResumeSection } from './components/sections/ResumeSection';
+import { ResumeSection } from './components/sections/resume';
 import { Box } from '@mui/material';
 import { useGetFirebaseTranslations } from './utils/use-firebase';
 
 const App = () => {
-	const [state, setState] = useState({});
+	const [, setState] = useState({});
 	const translations = useGetFirebaseTranslations('pt-br');
 
 	useEffect(() => {
