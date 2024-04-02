@@ -3,8 +3,7 @@ import { gitHubProfileState } from '../../states/global.state';
 import { GitHubProfileData } from '../../types/global.types';
 
 export const ProjectsSection = () => {
-	const gitHubProfileData =
-		useRecoilValue<GitHubProfileData>(gitHubProfileState);
+	const gitHubProfileData = useRecoilValue<GitHubProfileData>(gitHubProfileState);
 	return (
 		<section
 			id="projects"

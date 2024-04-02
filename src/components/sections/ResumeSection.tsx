@@ -11,8 +11,9 @@ import {
 } from '@mui/lab';
 import dayjs from 'dayjs';
 
-type ArrayElement<ArrayType extends readonly unknown[]> =
-	ArrayType extends readonly (infer ElementType)[] ? ElementType : never;
+type ArrayElement<ArrayType extends readonly unknown[]> = ArrayType extends readonly (infer ElementType)[]
+	? ElementType
+	: never;
 
 const formatDate = (date?: Date) => {
 	if (!date) {
@@ -22,10 +23,7 @@ const formatDate = (date?: Date) => {
 	return dayjs(date).format('MM/YYYY');
 };
 
-const formatStartEndPeriod = ({
-	start,
-	end,
-}: ArrayElement<ResumeData['work']>['period']) => {
+const formatStartEndPeriod = ({ start, end }: ArrayElement<ResumeData['work']>['period']) => {
 	const startDate = formatDate(start);
 	const endDate = formatDate(end);
 
@@ -47,9 +45,7 @@ const UiTimelineItem = (value: ArrayElement<ResumeData['work']>) => {
 			>
 				<Typography variant="h6">{value.company}</Typography>
 				<Typography variant="subtitle1">{value.role}</Typography>
-				<Typography variant="subtitle2">
-					{formatStartEndPeriod(value.period)}
-				</Typography>
+				<Typography variant="subtitle2">{formatStartEndPeriod(value.period)}</Typography>
 			</TimelineOppositeContent>
 			<TimelineSeparator>
 				<TimelineConnector />
@@ -97,9 +93,7 @@ export const ResumeSection = ({ resumeData }: ResumeSectionProps) => {
 		>
 			<Box className="wrapper">
 				<Typography component="h1">Resumé</Typography>
-				<Timeline position="right">
-					{transformWorkArray(resumeData.work).map(UiTimelineItem)}
-				</Timeline>
+				<Timeline position="right">{transformWorkArray(resumeData.work).map(UiTimelineItem)}</Timeline>
 			</Box>
 		</Box>
 	);

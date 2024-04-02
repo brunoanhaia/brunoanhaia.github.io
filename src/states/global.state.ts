@@ -21,24 +21,17 @@ export const gitHubProfileState = selector<GitHubProfileData>({
 			fetch('https://api.github.com/users/brunoanhaia'),
 			fetch('https://api.github.com/users/brunoanhaia/repos'),
 		])
-			.then(([personalInfo, repositoriesInfo]) =>
-				Promise.all([personalInfo.json(), repositoriesInfo.json()])
-			)
-			.then(
-				([
-					{ name, company, avatar_url: avatarUrl, bio },
+			.then(([personalInfo, repositoriesInfo]) => Promise.all([personalInfo.json(), repositoriesInfo.json()]))
+			.then(([{ name, company, avatar_url: avatarUrl, bio }, repositoriesInfo]) => {
+				const data: GitHubProfileData = {
+					name,
+					company,
+					avatarUrl,
 					repositoriesInfo,
-				]) => {
-					const data: GitHubProfileData = {
-						name,
-						company,
-						avatarUrl,
-						repositoriesInfo,
-						bio,
-					};
-					return data;
-				}
-			)
+					bio,
+				};
+				return data;
+			})
 			.catch((error) => {
 				console.error(error);
 				return defaultGitHubProfileState;

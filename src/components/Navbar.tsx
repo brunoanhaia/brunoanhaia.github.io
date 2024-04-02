@@ -12,19 +12,17 @@ import { NavbarItems, NavbarOrientation } from './NavbarItems';
 export const Navbar = (props: NavbarProps) => {
 	const { isXs } = useBreakpoint();
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-	const toggleDrawer =
-		(open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
-			console.log(event);
-			if (
-				event.type === 'keydown' &&
-				((event as React.KeyboardEvent).key === 'Tab' ||
-					(event as React.KeyboardEvent).key === 'Shift')
-			) {
-				return;
-			}
+	const toggleDrawer = (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
+		console.log(event);
+		if (
+			event.type === 'keydown' &&
+			((event as React.KeyboardEvent).key === 'Tab' || (event as React.KeyboardEvent).key === 'Shift')
+		) {
+			return;
+		}
 
-			setIsDrawerOpen(open);
-		};
+		setIsDrawerOpen(open);
+	};
 
 	return (
 		<Fragment>

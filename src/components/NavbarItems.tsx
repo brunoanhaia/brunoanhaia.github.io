@@ -11,12 +11,8 @@ export type NavbarItemsProps = {
 	orientation: NavbarOrientation | undefined;
 };
 
-export const NavbarItems = ({
-	items,
-	orientation = NavbarOrientation.Horizontal,
-}: NavbarItemsProps) => {
-	const flexDirection =
-		orientation === NavbarOrientation.Horizontal ? 'row' : 'column';
+export const NavbarItems = ({ items, orientation = NavbarOrientation.Horizontal }: NavbarItemsProps) => {
+	const flexDirection = orientation === NavbarOrientation.Horizontal ? 'row' : 'column';
 
 	return (
 		<List sx={{ display: 'flex', flexDirection, padding: 0 }}>

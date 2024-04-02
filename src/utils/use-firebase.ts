@@ -1,11 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import {
-	collection,
-	getDocs,
-	getFirestore,
-	query,
-	where,
-} from 'firebase/firestore';
+import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
 import { useMemo } from 'react';
 
 const firebaseConfig = {
@@ -31,17 +25,12 @@ const useFirebase = () => {
 const useGetFirebaseTranslations = async (lang: string) => {
 	const { firestore } = useFirebase();
 
-	const collectionRef = useMemo(
-		() => collection(firestore, 'translations'),
-		[firestore]
-	);
+	const collectionRef = useMemo(() => collection(firestore, 'translations'), [firestore]);
 
 	const tokens = useMemo(async () => {
 		const q = query(collectionRef, where('lang', '==', lang));
 		const translations = await getDocs(q);
-		const tokens = await getDocs(
-			collection(translations.docs[0].ref, 'tokens')
-		);
+		const tokens = await getDocs(collection(translations.docs[0].ref, 'tokens'));
 
 		return tokens.docs.map((doc) => doc.data());
 	}, [collectionRef, lang]);

@@ -2,8 +2,7 @@ import { useRecoilValue } from 'recoil';
 import { gitHubProfileState } from '../../states/global.state';
 
 export const MainSection = () => {
-	const { name, company, bio, avatarUrl } =
-		useRecoilValue(gitHubProfileState);
+	const { name, company, bio, avatarUrl } = useRecoilValue(gitHubProfileState);
 
 	return (
 		<section className="section__main">
