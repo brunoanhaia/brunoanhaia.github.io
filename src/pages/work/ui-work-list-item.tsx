@@ -15,13 +15,15 @@ const UiWorkListItem = ({ data }: UiWorkListItemProps) => {
 	return (
 		<UiTimeline.Item {...{ hideIcon }}>
 			{data.company && <UiTimeline.ItemTitle>{t(data.company)}</UiTimeline.ItemTitle>}
-			{data.roles
-				.map((role) => ({
-					title: t(role.name, { level: role.level }),
-					subtitle: formatPeriod(role.period),
-					key: `${role.name}-${role.experience}-${role.period.start}`,
-				}))
-				.map(UiTimeline.ItemOptional)}
+			{data.roles.map((role) => (
+				<UiTimeline.ItemOptional
+					{...{
+						title: t(role.name, { level: role.level }),
+						subtitle: formatPeriod(role.period),
+						key: `ui-timeline-${role.name}-${role.experience}-${role.period.start}`,
+					}}
+				/>
+			))}
 
 			<UiWorkExperienceList roles={data.roles}></UiWorkExperienceList>
 		</UiTimeline.Item>

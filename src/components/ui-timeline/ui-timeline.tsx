@@ -1,16 +1,10 @@
-import { Timeline, TimelineProps, timelineItemClasses } from '@mui/lab';
+import { timelineResetClassStyle } from './ui-timeline.constants';
+import { Timeline } from '@mui/lab';
 
-type UiTimelineRootProps = {} & TimelineProps;
+type UiTimelineRootProps = Parameters<typeof Timeline>[0];
 
-const timelineResetClassStyle = {
-	[`& .${timelineItemClasses.root}:before`]: {
-		flex: 0,
-		padding: 0,
-	},
+const UiTimelineRoot = ({ children, sx, ...rest }: UiTimelineRootProps) => {
+	return <Timeline {...{ sx: { ...timelineResetClassStyle, ...sx }, ...rest }}>{children}</Timeline>;
 };
 
-const UiTimelineRoot = ({ children, ...rest }: UiTimelineRootProps) => {
-	return <Timeline {...{ sx: timelineResetClassStyle, rest }}>{children}</Timeline>;
-};
-
-export { UiTimelineRoot, timelineResetClassStyle };
+export { UiTimelineRoot };

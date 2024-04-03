@@ -1,32 +1,29 @@
 import { UiWorkListItem } from './ui-work-list-item';
 import { transformWorkArray } from './utils';
 import { UiTimeline } from '@components/ui-timeline';
-import { Box, Typography } from '@mui/material';
+import { Stack } from '@mui/material';
 import { resumeData } from '@src/resume.data';
 import { useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
 
 export const WorkPage = () => {
-	const { t } = useTranslation();
-
 	const workData = useMemo(() => transformWorkArray(resumeData.work), []);
-	const timelineItemList = workData
-		.map((data, index) => ({
-			data,
-			key: `${data.company}-${index}`,
-		}))
-		.map(UiWorkListItem);
+	const timelineItemList = workData.map((data, index) => (
+		<UiWorkListItem
+			{...{
+				data,
+				key: `ui-work-list-item-${data.company}-${index}`,
+			}}
+		/>
+	));
 
 	return (
-		<Box
+		<Stack
 			component="section"
-			id="resume"
-			className="section__resume"
+			direction="column"
+			justifyContent="center"
+			alignItems="center"
 		>
-			<Box className="wrapper">
-				<Typography component="h1">{t('sections.resume.title')}</Typography>
-				<UiTimeline.Root>{timelineItemList}</UiTimeline.Root>
-			</Box>
-		</Box>
+			<UiTimeline.Root sx={{ mt: '2rem' }}>{timelineItemList}</UiTimeline.Root>
+		</Stack>
 	);
 };
