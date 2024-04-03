@@ -1,62 +1,45 @@
-import {
-	TimelineItem,
-	TimelineOppositeContent,
-	TimelineSeparator,
-	TimelineConnector,
-	TimelineDot,
-	TimelineContent,
-} from '@mui/lab';
+import { TimelineItem, TimelineSeparator, TimelineConnector, TimelineDot, TimelineContent } from '@mui/lab';
 import { Typography } from '@mui/material';
-import dayjs from 'dayjs';
-import { t } from 'i18next';
 import { useTranslation } from 'react-i18next';
-import { Period, Work } from './resume-section.types';
+import { Work } from './resume-section.types';
 import { UiExperienceList } from './ui-experience-list';
+import { Business } from '@mui/icons-material';
+import { UiTimelineItemTitle } from './ui-timeline-item-title';
+import { formatPeriod } from './utils';
 
 type UiTimelineItemProps = {
 	data: Work;
 };
 
-const formatDate = (date: Date) => {
-	return dayjs(date).format('MM/YYYY');
-};
-
-const formatPeriod = ({ start, end }: Period): string => {
-	const startDate = formatDate(start);
-	if (!end) {
-		return `${startDate} - ${t('work.period.current')}`;
-	}
-
-	const endDate = formatDate(end);
-	return `${startDate} - ${endDate}`;
-};
-
 const UiTimelineItem = ({ data }: UiTimelineItemProps) => {
 	const { t } = useTranslation();
+	const hasCompany = !!data.company;
 
 	return (
 		<TimelineItem>
-			<TimelineOppositeContent
-				sx={{ m: 'auto 0' }}
-				align="right"
-				variant="body2"
-				color="text.secondary"
-			>
-				<Typography variant="h6">{data.company && t(data.company)}</Typography>
-				{data.roles.map((role) => (
-					<>
-						<Typography variant="subtitle1">{t(role.name, { level: role.level })}</Typography>
-						<Typography variant="subtitle2">{formatPeriod(role.period)}</Typography>
-					</>
-				))}
-			</TimelineOppositeContent>
-			<TimelineSeparator>
-				<TimelineConnector />
-				<TimelineDot />
+			<TimelineSeparator sx={{ minWidth: '36px' }}>
+				<TimelineDot
+					color="primary"
+					sx={{
+						marginLeft: 'auto',
+						marginRight: 'auto',
+					}}
+				>
+					{hasCompany && <Business />}
+				</TimelineDot>
 				<TimelineConnector />
 			</TimelineSeparator>
-			<TimelineContent sx={{ py: '12px', px: 2 }}>
-				<UiExperienceList roles={data.roles} />
+
+			<TimelineContent sx={{ py: hasCompany ? '12px' : '4px', px: 2 }}>
+				<Typography variant="h6">{data.company && t(data.company)}</Typography>
+				{data.roles
+					.map((role) => ({
+						title: t(role.name, { level: role.level }),
+						subtitle: formatPeriod(role.period),
+						key: `${role.name}-${role.experience}-${role.period.start}`,
+					}))
+					.map(UiTimelineItemTitle)}
+				<UiExperienceList roles={data.roles}></UiExperienceList>
 			</TimelineContent>
 		</TimelineItem>
 	);
