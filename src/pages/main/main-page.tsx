@@ -1,25 +1,29 @@
-import { useRecoilValue } from 'recoil';
+import { Avatar, Stack, Typography } from '@mui/material';
 import { gitHubProfileState } from '@src/states/global.state';
+import { useRecoilValue } from 'recoil';
 
 export const MainPage = () => {
 	const { name, company, bio, avatarUrl } = useRecoilValue(gitHubProfileState);
 
 	return (
-		<section className="section__main">
-			<div className="div__image--profile">
-				<figure>
-					<img
-						className="image--profile"
-						src={avatarUrl}
-						alt="Me"
-					/>
-					<figcaption>{name}</figcaption>
-					<h1 className="company">{company}</h1>
-				</figure>
-			</div>
-			<div className="div__footer--profile">
-				<h1>{bio}</h1>
-			</div>
-		</section>
+		<Stack
+			direction="column"
+			alignItems="center"
+			justifyContent="space-around"
+			spacing={2}
+		>
+			<Avatar
+				src={avatarUrl}
+				alt={name}
+				sx={{
+					width: '100%',
+					height: '100%',
+					maxWidth: 500,
+				}}
+			/>
+			<Typography>{name}</Typography>
+			<Typography>{company}</Typography>
+			<Typography>{bio}</Typography>
+		</Stack>
 	);
 };

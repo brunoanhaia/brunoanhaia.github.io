@@ -1,4 +1,4 @@
-import { Timeline, timelineItemClasses, TimelineProps } from '@mui/lab';
+import { Timeline, TimelineProps, timelineItemClasses } from '@mui/lab';
 
 type UiTimelineRootProps = {} & TimelineProps;
 

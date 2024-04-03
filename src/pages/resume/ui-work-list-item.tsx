@@ -1,8 +1,8 @@
-import { useTranslation } from 'react-i18next';
-import { UiTimeline } from '@components/ui-timeline';
+import { Work } from './resume-page.types';
 import { UiExperienceList } from './ui-experience-list';
 import { formatPeriod } from './utils';
-import { Work } from './resume-page.types';
+import { UiTimeline } from '@components/ui-timeline';
+import { useTranslation } from 'react-i18next';
 
 type UiWorkListItemProps = {
 	data: Work;

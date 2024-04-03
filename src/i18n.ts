@@ -4,8 +4,8 @@ import { initReactI18next } from 'react-i18next';
 const tokens = {
 	sections: {
 		resume: {
-			title: 'Resumé'
-		}
+			title: 'Resumé',
+		},
 	},
 	education: {
 		intitution: {

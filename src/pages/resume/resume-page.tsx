@@ -1,12 +1,12 @@
-import { Box, Typography } from '@mui/material';
-import { ResumePageProps } from './resume-page.types';
-import { useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
+import { UiWorkListItem } from './ui-work-list-item';
 import { transformWorkArray } from './utils';
 import { UiTimeline } from '@components/ui-timeline';
-import { UiWorkListItem } from './ui-work-list-item';
+import { Box, Typography } from '@mui/material';
+import { resumeData } from '@src/resume.data';
+import { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 
-export const ResumePage = ({ resumeData }: ResumePageProps) => {
+export const ResumePage = () => {
 	const { t } = useTranslation();
 
 	const workData = useMemo(() => transformWorkArray(resumeData.work), [resumeData.work]);

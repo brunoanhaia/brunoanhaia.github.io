@@ -6,5 +6,6 @@
 	"editor.formatOnSave": true,
 	"editor.autoIndent": "brackets",
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	"editor.tabSize": 4
+	"editor.tabSize": 4,
+	"eslint.codeActionsOnSave.mode": "all"
 }

@@ -1,4 +1,4 @@
-import { TimelineSeparator, TimelineDot, TimelineConnector } from '@mui/lab';
+import { TimelineConnector, TimelineDot, TimelineSeparator } from '@mui/lab';
 import { ReactNode } from 'react';
 
 type UiTimelineSeparatorProps = {

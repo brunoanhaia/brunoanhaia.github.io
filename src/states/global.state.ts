@@ -1,5 +1,5 @@
-import { selector } from 'recoil';
 import { GitHubProfileData } from '../types/global.types';
+import { selector } from 'recoil';
 
 export enum RecoilStates {
 	GitHub = 'GitHub',

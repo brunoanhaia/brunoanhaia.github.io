@@ -1,7 +1,3 @@
-type ResumePageProps = {
-	resumeData: ResumeData;
-};
-
 type ResumeData = {
 	name: string;
 	born: Date;
@@ -40,4 +36,4 @@ enum TypeOfChange {
 }
 
 export { TypeOfChange };
-export type { ResumePageProps, ResumeData, Education, Work, Role, Period };
+export type { ResumeData, Education, Work, Role, Period };

@@ -1,6 +1,26 @@
-import { MenuItem } from './components/Navbar.type';
+import { MenuItem } from './components/ui-navbar/navbar.type';
 
 export const menuItemList: Array<MenuItem> = [
+	{
+		href: '/',
+		target: undefined,
+		text: 'Home',
+	},
+	{
+		href: '/work',
+		target: undefined,
+		text: 'Work',
+	},
+	{
+		href: '/education',
+		target: undefined,
+		text: 'Education',
+	},
+	{
+		href: '/projects',
+		target: undefined,
+		text: 'Projects',
+	},
 	{
 		href: 'https://www.linkedin.com/in/anhaiabruno/',
 		target: '_blank',
@@ -10,15 +30,5 @@ export const menuItemList: Array<MenuItem> = [
 		href: 'https://github.com/brunoanhaia/',
 		target: '_blank',
 		text: 'Github',
-	},
-	{
-		href: '#resume',
-		target: undefined,
-		text: 'Resumé',
-	},
-	{
-		href: '#projects',
-		target: undefined,
-		text: 'Projects',
 	},
 ];

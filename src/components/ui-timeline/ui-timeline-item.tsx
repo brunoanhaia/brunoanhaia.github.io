@@ -1,8 +1,8 @@
-import { TimelineItem } from '@mui/lab';
-import { Business } from '@mui/icons-material';
-import { ElementType, ReactNode } from 'react';
-import { UiTimelineSeparator } from './ui-timeline-separator';
 import { UiTimelineContent } from './ui-timeline-content';
+import { UiTimelineSeparator } from './ui-timeline-separator';
+import { Business } from '@mui/icons-material';
+import { TimelineItem } from '@mui/lab';
+import { ElementType, ReactNode } from 'react';
 
 type UiTimelineItemProps = {
 	children: ReactNode;
