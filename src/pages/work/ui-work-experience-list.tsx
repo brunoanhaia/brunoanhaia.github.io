@@ -1,12 +1,12 @@
-import { Role } from './resume-page.types';
 import { expandRolesExperiences } from './utils';
 import { CheckCircleOutlineRounded } from '@mui/icons-material';
 import { List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import { Role } from '@src/types/resume.types';
 import { ElementType, useMemo } from 'react';
 
 type UiExperienceListProps = { roles: Array<Role>; iconSlot?: ElementType };
 
-const UiExperienceList = ({ roles, iconSlot }: UiExperienceListProps) => {
+const UiWorkExperienceList = ({ roles, iconSlot }: UiExperienceListProps) => {
 	const IconComponent = iconSlot ?? CheckCircleOutlineRounded;
 	const expandedRolesExperiences = useMemo(() => expandRolesExperiences(roles), [roles]);
 
@@ -27,4 +27,4 @@ const UiExperienceList = ({ roles, iconSlot }: UiExperienceListProps) => {
 	);
 };
 
-export { UiExperienceList };
+export { UiWorkExperienceList };

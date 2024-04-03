@@ -6,10 +6,10 @@ import { resumeData } from '@src/resume.data';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-export const ResumePage = () => {
+export const WorkPage = () => {
 	const { t } = useTranslation();
 
-	const workData = useMemo(() => transformWorkArray(resumeData.work), [resumeData.work]);
+	const workData = useMemo(() => transformWorkArray(resumeData.work), []);
 	const timelineItemList = workData
 		.map((data, index) => ({
 			data,

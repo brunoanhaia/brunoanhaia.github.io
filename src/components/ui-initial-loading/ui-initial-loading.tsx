@@ -1,6 +1,6 @@
 import { Backdrop, CircularProgress } from '@mui/material';
 
-export const InitialLoading = () => {
+export const UiInitialLoading = () => {
 	return (
 		<Backdrop
 			sx={{

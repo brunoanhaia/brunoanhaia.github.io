@@ -1,7 +1,7 @@
-import { Work } from './resume-page.types';
-import { UiExperienceList } from './ui-experience-list';
+import { UiWorkExperienceList } from './ui-work-experience-list';
 import { formatPeriod } from './utils';
 import { UiTimeline } from '@components/ui-timeline';
+import { Work } from '@src/types/resume.types';
 import { useTranslation } from 'react-i18next';
 
 type UiWorkListItemProps = {
@@ -23,7 +23,7 @@ const UiWorkListItem = ({ data }: UiWorkListItemProps) => {
 				}))
 				.map(UiTimeline.ItemOptional)}
 
-			<UiExperienceList roles={data.roles}></UiExperienceList>
+			<UiWorkExperienceList roles={data.roles}></UiWorkExperienceList>
 		</UiTimeline.Item>
 	);
 };

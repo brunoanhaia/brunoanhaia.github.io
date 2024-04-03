@@ -1,7 +1,7 @@
 import './app.css';
 import { useGetFirebaseTranslations } from './hooks/use-firebase';
 import { router } from './router';
-import { InitialLoading } from '@components/InitialLoading';
+import { UiInitialLoading } from '@components/ui-initial-loading';
 import { Box } from '@mui/material';
 import { Suspense, useEffect, useState } from 'react';
 import { RouterProvider } from 'react-router-dom';
@@ -17,8 +17,8 @@ const App = () => {
 	}, [translations]);
 
 	return (
-		<Box className="App">
-			<Suspense fallback={<InitialLoading />}>
+		<Box>
+			<Suspense fallback={<UiInitialLoading />}>
 				<RouterProvider router={router} />
 			</Suspense>
 		</Box>

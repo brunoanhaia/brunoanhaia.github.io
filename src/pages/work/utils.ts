@@ -1,4 +1,4 @@
-import { Period, Role, TypeOfChange, Work } from './resume-page.types';
+import { Period, Role, TypeOfChange, Work } from '@src/types/resume.types';
 import dayjs from 'dayjs';
 import { t } from 'i18next';
 

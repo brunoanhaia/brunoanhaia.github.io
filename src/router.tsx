@@ -1,4 +1,4 @@
-import { MainPage, ProjectsPage, ResumePage, RootPage } from './pages';
+import { MainPage, ProjectsPage, RootPage, WorkPage } from './pages';
 import { createBrowserRouter } from 'react-router-dom';
 
 const router = createBrowserRouter([
@@ -16,11 +16,11 @@ const router = createBrowserRouter([
 			},
 			{
 				path: 'work',
-				element: <ResumePage />,
+				element: <WorkPage />,
 			},
 			{
 				path: 'education',
-				element: <ResumePage />,
+				element: <WorkPage />,
 			},
 			{
 				path: '*',
