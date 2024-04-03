@@ -1,11 +1,11 @@
 import { Typography } from '@mui/material';
 
-type UiTimelineItemTitleProps = {
+type UiTimelineItemOptionalProps = {
 	title: string;
 	subtitle: string;
 };
 
-const UiTimelineItemTitle = ({ title, subtitle }: UiTimelineItemTitleProps) => {
+const UiTimelineItemOptional = ({ title, subtitle }: UiTimelineItemOptionalProps) => {
 	return (
 		<>
 			<Typography variant="subtitle1">{title}</Typography>
@@ -14,4 +14,4 @@ const UiTimelineItemTitle = ({ title, subtitle }: UiTimelineItemTitleProps) => {
 	);
 };
 
-export { UiTimelineItemTitle };
+export { UiTimelineItemOptional };
