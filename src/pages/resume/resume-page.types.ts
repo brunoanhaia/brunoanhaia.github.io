@@ -1,4 +1,4 @@
-type ResumeSectionProps = {
+type ResumePageProps = {
 	resumeData: ResumeData;
 };
 
@@ -40,4 +40,4 @@ enum TypeOfChange {
 }
 
 export { TypeOfChange };
-export type { ResumeSectionProps, ResumeData, Education, Work, Role, Period };
+export type { ResumePageProps, ResumeData, Education, Work, Role, Period };

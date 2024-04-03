@@ -1,8 +1,8 @@
 import { useRecoilValue } from 'recoil';
-import { gitHubProfileState } from '../../states/global.state';
-import { GitHubProfileData } from '../../types/global.types';
+import { gitHubProfileState } from '@src/states/global.state';
+import { GitHubProfileData } from '@src/types/global.types';
 
-export const ProjectsSection = () => {
+export const ProjectsPage = () => {
 	const gitHubProfileData = useRecoilValue<GitHubProfileData>(gitHubProfileState);
 	return (
 		<section

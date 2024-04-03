@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import { t } from "i18next";
-import { Work, TypeOfChange, Period, Role } from "./resume-section.types";
+import { Work, TypeOfChange, Period, Role } from "./resume-page.types";
 
 const transformWorkArray = (value: Array<Work>): Array<Work> => {
     return value.flatMap((work) => {

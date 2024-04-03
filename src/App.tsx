@@ -1,14 +1,12 @@
 import './App.css';
-import { MainSection } from './components/sections/MainSection';
+import { MainPage, ProjectsPage, ResumePage } from '@src/pages/';
 import { resumeData } from './resume.data';
 import { Suspense, useEffect, useState } from 'react';
-import { ProjectsSection } from './components/sections/ProjectsSection';
 import { Navbar } from './components/Navbar';
 import { menuItemList } from './menu.config';
-import { InitialLoading } from './components/InitialLoading';
-import { ResumeSection } from './components/sections/resume';
+import { InitialLoading } from '@components/InitialLoading';
 import { Box } from '@mui/material';
-import { useGetFirebaseTranslations } from './utils/use-firebase';
+import { useGetFirebaseTranslations } from './hooks/use-firebase';
 
 const App = () => {
 	const [, setState] = useState({});
@@ -27,9 +25,9 @@ const App = () => {
 					<Navbar items={menuItemList} />
 				</Box>
 				<Box className="content">
-					<MainSection />
-					<ProjectsSection />
-					<ResumeSection resumeData={resumeData} />
+					<MainPage />
+					<ProjectsPage />
+					<ResumePage resumeData={resumeData} />
 				</Box>
 			</Suspense>
 		</Box>

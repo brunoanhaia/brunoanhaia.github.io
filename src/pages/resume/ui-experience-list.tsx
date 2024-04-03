@@ -1,6 +1,6 @@
 import { CheckCircleOutlineRounded } from '@mui/icons-material';
 import { List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
-import { Role } from './resume-section.types';
+import { Role } from './resume-page.types';
 import { ElementType, useMemo } from 'react';
 import { expandRolesExperiences } from './utils';
 

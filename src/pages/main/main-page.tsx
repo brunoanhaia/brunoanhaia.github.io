@@ -1,7 +1,7 @@
 import { useRecoilValue } from 'recoil';
-import { gitHubProfileState } from '../../states/global.state';
+import { gitHubProfileState } from '@src/states/global.state';
 
-export const MainSection = () => {
+export const MainPage = () => {
 	const { name, company, bio, avatarUrl } = useRecoilValue(gitHubProfileState);
 
 	return (

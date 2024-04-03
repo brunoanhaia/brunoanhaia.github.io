@@ -1,4 +1,4 @@
-import { ResumeData, TypeOfChange } from './components/sections/resume';
+import { ResumeData, TypeOfChange } from './pages/resume';
 
 export const resumeData: ResumeData = {
 	name: 'Bruno Anhaia',
