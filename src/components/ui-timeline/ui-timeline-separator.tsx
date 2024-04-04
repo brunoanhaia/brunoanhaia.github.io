@@ -1,4 +1,6 @@
-import { TimelineConnector, TimelineDot, TimelineSeparator } from '@mui/lab';
+import { UiTimelineDot } from './ui-timeline-dot';
+import { TimelineConnector, TimelineSeparator } from '@mui/lab';
+import { useTheme } from '@mui/material';
 import { ReactNode } from 'react';
 
 type UiTimelineSeparatorProps = {
@@ -6,18 +8,17 @@ type UiTimelineSeparatorProps = {
 };
 
 const UiTimelineSeparator = ({ children }: UiTimelineSeparatorProps) => {
+	const theme = useTheme();
+
 	return (
-		<TimelineSeparator sx={{ minWidth: '36px' }}>
-			<TimelineDot
-				color="primary"
+		<TimelineSeparator sx={{ minWidth: '2.25rem', backgroundColor: 'inherit' }}>
+			<UiTimelineDot>{children}</UiTimelineDot>
+			<TimelineConnector
 				sx={{
-					marginLeft: 'auto',
-					marginRight: 'auto',
+					backgroundColor: theme.palette.text.primary,
+					color: theme.palette.background.default,
 				}}
-			>
-				{children}
-			</TimelineDot>
-			<TimelineConnector />
+			/>
 		</TimelineSeparator>
 	);
 };

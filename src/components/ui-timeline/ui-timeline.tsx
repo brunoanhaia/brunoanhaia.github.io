@@ -4,7 +4,14 @@ import { Timeline } from '@mui/lab';
 type UiTimelineRootProps = Parameters<typeof Timeline>[0];
 
 const UiTimelineRoot = ({ children, sx, ...rest }: UiTimelineRootProps) => {
-	return <Timeline {...{ sx: { ...timelineResetClassStyle, ...sx }, ...rest }}>{children}</Timeline>;
+	return (
+		<Timeline
+			color="primary"
+			{...{ sx: { ...timelineResetClassStyle, ...sx }, ...rest }}
+		>
+			{children}
+		</Timeline>
+	);
 };
 
 export { UiTimelineRoot };

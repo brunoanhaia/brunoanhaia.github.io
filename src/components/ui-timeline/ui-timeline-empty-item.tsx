@@ -1,16 +1,11 @@
-import { TimelineDot, TimelineItem, TimelineSeparator } from '@mui/lab';
+import { UiTimelineDot } from './ui-timeline-dot';
+import { TimelineItem, TimelineSeparator } from '@mui/lab';
 
 const UiTimelineEmptyItem = () => {
 	return (
-		<TimelineItem>
+		<TimelineItem color="inherit">
 			<TimelineSeparator sx={{ minWidth: '36px' }}>
-				<TimelineDot
-					color="primary"
-					sx={{
-						marginLeft: 'auto',
-						marginRight: 'auto',
-					}}
-				></TimelineDot>
+				<UiTimelineDot />
 			</TimelineSeparator>
 		</TimelineItem>
 	);
