@@ -24,7 +24,7 @@ export const ProjectsPage = () => {
 						>
 							<ListItem>
 								<ListItemIcon>
-									<GitHub color="secondary" />
+									<GitHub color="inherit" />
 								</ListItemIcon>
 								<ListItemButton
 									to={html_url}

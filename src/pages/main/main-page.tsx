@@ -11,6 +11,7 @@ export const MainPage = () => {
 			alignItems="center"
 			justifyContent="space-around"
 			spacing={2}
+			marginTop="2rem"
 		>
 			<Avatar
 				src={avatarUrl}

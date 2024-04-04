@@ -1,13 +1,12 @@
 import { Box } from '@mui/material';
-import { Navbar } from '@src/components/ui-navbar';
-import { menuItemList } from '@src/menu.config';
+import { UiNavbar } from '@src/components/ui-nav-bar';
 import { Outlet } from 'react-router-dom';
 
 const RootPage = () => {
 	return (
 		<>
 			<Box>
-				<Navbar items={menuItemList} />
+				<UiNavbar />
 			</Box>
 			<Box className="content">
 				<Outlet />
