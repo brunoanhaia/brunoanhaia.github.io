@@ -1,26 +1,42 @@
+import { GitHub } from '@mui/icons-material';
+import { List, ListItem, ListItemButton, ListItemIcon, Stack, Tooltip } from '@mui/material';
 import { gitHubProfileState } from '@src/states/global.state';
 import { GitHubProfileData } from '@src/types/global.types';
+import { Link } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 
 export const ProjectsPage = () => {
 	const gitHubProfileData = useRecoilValue<GitHubProfileData>(gitHubProfileState);
+
 	return (
-		<section
-			id="projects"
-			className="section__gh--projects"
+		<Stack
+			direction="column"
+			alignItems="center"
+			marginTop="2rem"
 		>
-			<div className="wrapper">
-				<h1>Github projects</h1>
-				<ul className="gh--projects-list">
-					{gitHubProfileData.repositoriesInfo.map(({ name, url }) => {
-						return (
-							<li key={name}>
-								<a href={url}>{name}</a>
-							</li>
-						);
-					})}
-				</ul>
-			</div>
-		</section>
+			<List>
+				{gitHubProfileData.repositoriesInfo.map(({ name, html_url, description }) => {
+					return (
+						<Tooltip
+							key={name}
+							title={description}
+							arrow
+						>
+							<ListItem>
+								<ListItemIcon>
+									<GitHub color="secondary" />
+								</ListItemIcon>
+								<ListItemButton
+									to={html_url}
+									component={Link}
+								>
+									{name}
+								</ListItemButton>
+							</ListItem>
+						</Tooltip>
+					);
+				})}
+			</List>
+		</Stack>
 	);
 };
