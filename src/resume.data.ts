@@ -6,18 +6,30 @@ export const resumeData: ResumeData = {
 	education: [
 		{
 			institution: 'education.institution.FACENS',
-			status: 'education.status.finished',
+			status: 'education.status.completed',
 			name: 'education.courseName.electricalEngineering',
+			period: {
+				start: new Date(2011, 0),
+				end: new Date(2016, 11)
+			}
 		},
 		{
 			institution: 'education.institution.UEC',
-			status: 'education.status.finished',
+			status: 'education.status.completed',
 			name: 'education.courseName.sandwich',
+			period: {
+				start: new Date(2014, 0),
+				end: new Date(2015, 11)
+			}
 		},
 		{
 			institution: 'education.institution.FATEC',
-			status: 'education.status.uncompleted',
+			status: 'education.status.notCompleted',
 			name: 'education.courseName.systemAnalisysAndDevelopment',
+			period: {
+				start: new Date(2017, 0),
+				end: new Date(2019, 11)
+			}
 		},
 	],
 	work: [

@@ -1,5 +1,4 @@
-import { Period, Role, TypeOfChange, Work } from '@src/types/resume.types';
-import dayjs from 'dayjs';
+import { Role, TypeOfChange, Work } from '@src/types/resume.types';
 import { t } from 'i18next';
 
 const transformWorkArray = (value: Array<Work>): Array<Work> => {
@@ -25,20 +24,6 @@ const expandWorkRoles = (value: Work): Array<Work> => {
 	}));
 };
 
-const formatDate = (date: Date) => {
-	return dayjs(date).format('MM/YYYY');
-};
-
-const formatPeriod = ({ start, end }: Period): string => {
-	const startDate = formatDate(start);
-	if (!end) {
-		return `${startDate} - ${t('work.period.current')}`;
-	}
-
-	const endDate = formatDate(end);
-	return `${startDate} - ${endDate}`;
-};
-
 const formatExperience = (experience: Role['experience']): Array<string> => {
 	return t(experience ?? '').split(';');
 };
@@ -47,4 +32,4 @@ const expandRolesExperiences = (value: Array<Role>): Array<string> => {
 	return value.flatMap((role) => formatExperience(role.experience)).filter((experience) => !!experience);
 };
 
-export { transformWorkArray, expandWorkRoles, formatDate, formatPeriod, formatExperience, expandRolesExperiences };
+export { transformWorkArray, expandWorkRoles, formatExperience, expandRolesExperiences };

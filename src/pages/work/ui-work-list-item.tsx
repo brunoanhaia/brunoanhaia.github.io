@@ -1,7 +1,7 @@
 import { UiWorkExperienceList } from './ui-work-experience-list';
-import { formatPeriod } from './utils';
 import { UiTimeline } from '@components/ui-timeline';
 import { Work } from '@src/types/resume.types';
+import { formatPeriod } from '@src/utils/format-period';
 import { useTranslation } from 'react-i18next';
 
 type UiWorkListItemProps = {

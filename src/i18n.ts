@@ -8,14 +8,14 @@ const tokens = {
 		},
 	},
 	education: {
-		intitution: {
+		institution: {
 			FACENS: 'Sorocaba College of Engineering (FACENS)',
 			UEC: 'Tokyo University of Electrical Communications (UEC)',
 			FATEC: 'Sorocaba Technological College (FATEC)',
 		},
 		status: {
-			finished: 'Finished',
-			uncompleted: 'Uncompleted',
+			completed: 'Completed',
+			notCompleted: 'Not completed',
 			inProgress: 'In progress',
 		},
 		courseName: {

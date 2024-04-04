@@ -1,4 +1,4 @@
-import { MainPage, ProjectsPage, RootPage, WorkPage } from './pages';
+import { EducationPage, MainPage, ProjectsPage, RootPage, WorkPage } from './pages';
 import { createBrowserRouter } from 'react-router-dom';
 
 const router = createBrowserRouter([
@@ -20,7 +20,7 @@ const router = createBrowserRouter([
 			},
 			{
 				path: 'education',
-				element: <WorkPage />,
+				element: <EducationPage />,
 			},
 			{
 				path: '*',

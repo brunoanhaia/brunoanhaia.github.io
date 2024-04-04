@@ -23,7 +23,10 @@ export const WorkPage = () => {
 			justifyContent="center"
 			alignItems="center"
 		>
-			<UiTimeline.Root sx={{ mt: '2rem' }}>{timelineItemList}</UiTimeline.Root>
+			<UiTimeline.Root sx={{ mt: '2rem' }}>
+				{timelineItemList}
+				<UiTimeline.EmptyItem />
+			</UiTimeline.Root>
 		</Stack>
 	);
 };
