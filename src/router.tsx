@@ -1,5 +1,21 @@
-import { EducationPage, MainPage, ProjectsPage, RootPage, WorkPage } from './pages';
+import { RootPage } from './pages';
 import { createBrowserRouter } from 'react-router-dom';
+
+const pageNameConstants = {
+	root: '/',
+	main: '/main',
+	projects: '/projects',
+	education: '/education',
+	work: '/work',
+};
+
+const pagesMap = {
+	[pageNameConstants.root]: () => import('@src/pages/root').then((m) => ({ Component: m.RootPage })),
+	[pageNameConstants.main]: () => import('@src/pages/main').then((m) => ({ Component: m.MainPage })),
+	[pageNameConstants.projects]: () => import('@src/pages/projects').then((m) => ({ Component: m.ProjectsPage })),
+	[pageNameConstants.education]: () => import('@src/pages/education').then((m) => ({ Component: m.EducationPage })),
+	[pageNameConstants.work]: () => import('@src/pages/work').then((m) => ({ Component: m.WorkPage })),
+};
 
 const router = createBrowserRouter([
 	{
@@ -8,23 +24,23 @@ const router = createBrowserRouter([
 		children: [
 			{
 				path: '',
-				element: <MainPage />,
+				lazy: pagesMap[pageNameConstants.main],
 			},
 			{
 				path: 'projects',
-				element: <ProjectsPage />,
+				lazy: pagesMap[pageNameConstants.projects],
 			},
 			{
 				path: 'work',
-				element: <WorkPage />,
+				lazy: pagesMap[pageNameConstants.work],
 			},
 			{
 				path: 'education',
-				element: <EducationPage />,
+				lazy: pagesMap[pageNameConstants.education],
 			},
 			{
 				path: '*',
-				element: <MainPage />,
+				lazy: pagesMap[pageNameConstants.main],
 			},
 		],
 	},
