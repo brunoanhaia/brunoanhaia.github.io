@@ -1,10 +1,10 @@
-import { NavbarOrientation } from "./ui-nav-bar.enum";
-import { menuIconType } from "./ui-nav-bar.constants";
+import { menuIconType } from './ui-nav-bar.constants';
+import { navbarOrientation } from './ui-nav-bar.enum';
 
 type MenuConfig = {
 	textList: Array<MenuItem>;
 	iconList: Array<MenuItemIcon>;
-}
+};
 
 type MenuItem = Readonly<{
 	href: string;
@@ -12,9 +12,11 @@ type MenuItem = Readonly<{
 	text: string;
 }>;
 
-type MenuItemIcon = Readonly<MenuItem & {
-	icon?: keyof typeof menuIconType;
-}>
+type MenuItemIcon = Readonly<
+	MenuItem & {
+		icon?: keyof typeof menuIconType;
+	}
+>;
 
 type NavbarProps = Readonly<{
 	items: Array<MenuItem>;
@@ -22,13 +24,7 @@ type NavbarProps = Readonly<{
 
 type NavbarItemsProps = {
 	items: Array<MenuItem>;
-	orientation: NavbarOrientation | undefined;
+	orientation: keyof typeof navbarOrientation | undefined;
 };
 
-export type {
-	MenuItem,
-	MenuItemIcon,
-	NavbarProps,
-	NavbarItemsProps,
-	MenuConfig
-}
+export type { MenuItem, MenuItemIcon, NavbarProps, NavbarItemsProps, MenuConfig };

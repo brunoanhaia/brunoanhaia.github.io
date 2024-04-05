@@ -1,10 +1,10 @@
-import { NavbarOrientation } from './ui-nav-bar.enum';
+import { navbarOrientation } from './ui-nav-bar.enum';
 import { NavbarItemsProps } from './ui-nav-bar.type';
 import { UiNavLinkButton } from '@components/ui-nav-link';
 import { List, ListItem, Typography } from '@mui/material';
 
-export const NavbarItems = ({ items, orientation = NavbarOrientation.Horizontal }: NavbarItemsProps) => {
-	const flexDirection = orientation === NavbarOrientation.Horizontal ? 'row' : 'column';
+export const NavbarItems = ({ items, orientation = navbarOrientation.horizontal }: NavbarItemsProps) => {
+	const flexDirection = orientation === navbarOrientation.horizontal ? 'row' : 'column';
 
 	return (
 		<List sx={{ display: 'flex', flexDirection, padding: 0 }}>

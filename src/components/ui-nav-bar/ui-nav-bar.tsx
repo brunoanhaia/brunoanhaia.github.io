@@ -1,7 +1,7 @@
 import { UiNavLink } from '../ui-nav-link';
 import { NavbarItems } from './ui-nav-bar-items';
 import { menuIconType } from './ui-nav-bar.constants';
-import { NavbarOrientation } from './ui-nav-bar.enum';
+import { navbarOrientation } from './ui-nav-bar.enum';
 import { UiNavbarThemeButton } from './ui-navbar-theme-button';
 import { UiIconButton } from '@components/ui-icon-button';
 import { Menu as MenuIcon } from '@mui/icons-material';
@@ -14,7 +14,7 @@ const UiHorizontalMenu = () => {
 	return (
 		<NavbarItems
 			items={menuConfig.textList}
-			orientation={NavbarOrientation.Horizontal}
+			orientation={navbarOrientation.horizontal}
 		/>
 	);
 };
@@ -44,7 +44,7 @@ const UiVerticalMenu = () => {
 			>
 				<NavbarItems
 					items={menuConfig.textList}
-					orientation={NavbarOrientation.Vertical}
+					orientation={navbarOrientation.vertical}
 				/>
 			</Drawer>
 		</>
