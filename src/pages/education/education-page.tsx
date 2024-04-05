@@ -10,7 +10,7 @@ import { useTranslation } from 'react-i18next';
 export const EducationPage = () => {
 	const { t } = useTranslation();
 	const sortedEducation = useMemo(
-		() => resumeData.education.sort((a, b) => (dayjs(a.period.start).isAfter(dayjs(b.period.start)) ? -1 : 1)),
+		() => resumeData.education.toSorted((a, b) => (dayjs(a.period.start).isAfter(dayjs(b.period.start)) ? -1 : 1)),
 		[]
 	);
 	return (

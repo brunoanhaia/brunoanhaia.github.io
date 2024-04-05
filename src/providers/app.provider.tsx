@@ -43,10 +43,11 @@ const getTheme = (paletteMode: PaletteMode) => {
 const AppProvider = ({ children }: AppProviderProps) => {
 	const { systemDarkMode } = useDarkMode();
 	const [mode, setMode] = useState<PaletteMode>(systemDarkMode ? 'dark' : 'light');
+	const memoizedMode = useMemo(() => ({ mode, setMode }), [mode]);
 	const theme = useMemo(() => createTheme(getTheme(mode)), [mode]);
 
 	return (
-		<ThemeContext.Provider value={{ mode, setMode }}>
+		<ThemeContext.Provider value={memoizedMode}>
 			<ThemeProvider theme={theme}>{children}</ThemeProvider>
 		</ThemeContext.Provider>
 	);
