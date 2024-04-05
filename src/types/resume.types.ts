@@ -9,7 +9,7 @@ type Education = {
 	institution: string;
 	status: string;
 	name: string;
-	period: Period
+	period: Period;
 };
 
 type Work = {

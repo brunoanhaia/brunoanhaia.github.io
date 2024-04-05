@@ -1,1 +1,1 @@
-export * from './ui-initial-loading'
+export * from './ui-initial-loading';

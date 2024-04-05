@@ -1,4 +1,4 @@
-import { ResumeData, TypeOfChange } from "@src/types/resume.types";
+import { ResumeData, TypeOfChange } from '@src/types/resume.types';
 
 export const resumeData: ResumeData = {
 	name: 'Bruno Anhaia',
@@ -10,8 +10,8 @@ export const resumeData: ResumeData = {
 			name: 'education.courseName.electricalEngineering',
 			period: {
 				start: new Date(2011, 0),
-				end: new Date(2016, 11)
-			}
+				end: new Date(2016, 11),
+			},
 		},
 		{
 			institution: 'education.institution.UEC',
@@ -19,8 +19,8 @@ export const resumeData: ResumeData = {
 			name: 'education.courseName.sandwich',
 			period: {
 				start: new Date(2014, 0),
-				end: new Date(2015, 11)
-			}
+				end: new Date(2015, 11),
+			},
 		},
 		{
 			institution: 'education.institution.FATEC',
@@ -28,8 +28,8 @@ export const resumeData: ResumeData = {
 			name: 'education.courseName.systemAnalisysAndDevelopment',
 			period: {
 				start: new Date(2017, 0),
-				end: new Date(2019, 11)
-			}
+				end: new Date(2019, 11),
+			},
 		},
 	],
 	work: [

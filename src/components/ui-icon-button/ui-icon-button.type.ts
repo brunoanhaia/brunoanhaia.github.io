@@ -1,5 +1,5 @@
-import { IconButtonProps } from "@mui/material";
+import { IconButtonProps } from '@mui/material';
 
 type UiIconButtonProps = IconButtonProps;
 
-export type { UiIconButtonProps }
+export type { UiIconButtonProps };

@@ -1,12 +1,10 @@
-import { timelineItemClasses } from "@mui/lab";
+import { timelineItemClasses } from '@mui/lab';
 
 const timelineResetClassStyle = {
-    [`& .${timelineItemClasses.root}:before`]: {
-        flex: 0,
-        padding: 0,
-    },
+	[`& .${timelineItemClasses.root}:before`]: {
+		flex: 0,
+		padding: 0,
+	},
 };
 
-export {
-    timelineResetClassStyle
-}
+export { timelineResetClassStyle };

@@ -1,7 +1,7 @@
-import { useMediaQuery } from "@mui/material";
+import { useMediaQuery } from '@mui/material';
 
 export const useDarkMode = () => {
-    const systemDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+	const systemDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
 
-    return { systemDarkMode }
-}
+	return { systemDarkMode };
+};
