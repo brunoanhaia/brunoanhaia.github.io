@@ -1,4 +1,3 @@
-import './app.css';
 import { useGetFirebaseTranslations } from './hooks/use-firebase';
 import { AppProvider } from './providers/app.provider';
 import { router } from './router';

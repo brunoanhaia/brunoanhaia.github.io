@@ -1,4 +1,3 @@
-import { RootPage } from './pages';
 import { createBrowserRouter } from 'react-router-dom';
 
 const pageNameConstants = {
@@ -20,7 +19,7 @@ const pagesMap = {
 const router = createBrowserRouter([
 	{
 		path: '/',
-		element: <RootPage />,
+		lazy: pagesMap[pageNameConstants.root],
 		children: [
 			{
 				path: '',
