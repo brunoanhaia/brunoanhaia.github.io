@@ -1,5 +1,6 @@
+import { I18nTokenFormat } from '@src/types/i18n.types';
 import { initializeApp } from 'firebase/app';
-import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
+import { collection, doc, getDoc, getFirestore } from 'firebase/firestore';
 import { useMemo } from 'react';
 
 const firebaseConfig = {
@@ -28,11 +29,9 @@ const useGetFirebaseTranslations = async (lang: string) => {
 	const collectionRef = useMemo(() => collection(firestore, 'translations'), [firestore]);
 
 	const tokens = useMemo(async () => {
-		const q = query(collectionRef, where('lang', '==', lang));
-		const translations = await getDocs(q);
-		const tokens = await getDocs(collection(translations.docs[0].ref, 'tokens'));
+		const langDoc = await getDoc(doc(collectionRef, lang));
 
-		return tokens.docs.map((doc) => doc.data());
+		return langDoc.data() as { tokens: I18nTokenFormat };
 	}, [collectionRef, lang]);
 
 	return tokens;

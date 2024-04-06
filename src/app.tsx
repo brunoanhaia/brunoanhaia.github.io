@@ -1,29 +1,21 @@
-import { useGetFirebaseTranslations } from './hooks/use-firebase';
+import { UiSuspense } from './components/ui-suspense';
+import { useFirebaseI18nTranslations } from './hooks/use-firebase-i18n-translations';
 import { AppProvider } from './providers/app.provider';
 import { router } from './router';
-import { UiInitialLoading } from '@components/ui-initial-loading';
-import { Box, CssBaseline } from '@mui/material';
-import { Suspense, useEffect, useState } from 'react';
-import { RouterProvider } from 'react-router-dom';
+import { CssBaseline } from '@mui/material';
+import { Await, RouterProvider } from 'react-router-dom';
 
 const App = () => {
-	const [, setState] = useState({});
-	const translations = useGetFirebaseTranslations('pt-br');
-
-	useEffect(() => {
-		translations.then((value) => {
-			setState(value);
-		});
-	}, [translations]);
+	const i18nLoaded = useFirebaseI18nTranslations();
 
 	return (
 		<AppProvider>
 			<CssBaseline>
-				<Box>
-					<Suspense fallback={<UiInitialLoading />}>
+				<UiSuspense>
+					<Await resolve={i18nLoaded}>
 						<RouterProvider router={router} />
-					</Suspense>
-				</Box>
+					</Await>
+				</UiSuspense>
 			</CssBaseline>
 		</AppProvider>
 	);
