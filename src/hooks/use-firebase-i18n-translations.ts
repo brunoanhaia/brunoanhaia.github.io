@@ -9,7 +9,7 @@ const useFirebaseI18nTranslations = (lang: string = 'en') => {
 			.then(({ tokens }) => tokens)
 			.then(i18nextInit)
 			.then(() => resolve(true))
-			.catch(() => reject(false));
+			.catch(() => reject(new Error('Something went wrong')));
 	});
 };
 
