@@ -1,39 +1,110 @@
-export const resumeData = {
+import { ResumeData, TypeOfChange } from '@src/types/resume.types';
+
+export const resumeData: ResumeData = {
 	name: 'Bruno Anhaia',
-	age: '30',
+	born: new Date(1993, 2),
 	education: [
 		{
-			institution: 'Sorocaba Technological College (FATEC)',
-			status: 'in progress',
-			name: 'System Analysis and Development - Information Technology',
+			institution: 'education.institution.FACENS',
+			status: 'education.status.completed',
+			name: 'education.courseName.electricalEngineering',
+			period: {
+				start: new Date(2011, 0),
+				end: new Date(2016, 11),
+			},
 		},
 		{
-			institution: 'University of Campinas (UNICAMP)',
-			status: 'in progress',
-			name: 'Masters in Electrical Engineering',
+			institution: 'education.institution.UEC',
+			status: 'education.status.completed',
+			name: 'education.courseName.sandwich',
+			period: {
+				start: new Date(2014, 0),
+				end: new Date(2015, 11),
+			},
 		},
 		{
-			institution: 'Sorocaba College of Engineering (FACENS)',
-			status: 'finished',
-			name: 'Bachelor in Electrical Engineering',
-		},
-		{
-			institution: 'TOkyo University of Electrical Communications (UEC)',
-			status: 'finished',
-			name: 'Sandwich degree',
+			institution: 'education.institution.FATEC',
+			status: 'education.status.notCompleted',
+			name: 'education.courseName.systemAnalisysAndDevelopment',
+			period: {
+				start: new Date(2017, 0),
+				end: new Date(2019, 11),
+			},
 		},
 	],
 	work: [
 		{
-			company: 'FIT - Institute of Technology',
-			period: '2019/01 ~ NOW',
-			experience: 'C/C++, Python, Batch',
+			company: 'work.company.Fit.name',
+			roles: [
+				{
+					period: {
+						start: new Date(2023, 10),
+					},
+					name: 'work.role.leadEngineer',
+					level: 'II',
+					experience: 'work.company.Fit.experience.IILead',
+					typeOfChange: TypeOfChange.Promotion,
+				},
+				{
+					period: {
+						start: new Date(2022, 5),
+						end: new Date(2023, 9),
+					},
+					name: 'work.role.leadEngineer',
+					level: 'I',
+				},
+			],
 		},
 		{
-			company: 'VA Engenharia',
-			period: '2018/03 ~ 2019/01',
-			experience:
-				'PHP, MySQL, jQuery, JavaScript, HTML, SASS, Python Flask',
+			company: 'work.company.Aegro.name',
+			roles: [
+				{
+					period: {
+						start: new Date(2022, 2),
+						end: new Date(2022, 5),
+					},
+					name: 'work.role.engineer',
+					level: 'II',
+					experience: 'work.company.Aegro.experience',
+				},
+			],
+		},
+		{
+			company: 'work.company.Fit.name',
+			roles: [
+				{
+					period: {
+						start: new Date(2020, 3),
+						end: new Date(2022, 2),
+					},
+					name: 'work.role.engineer',
+					level: 'I',
+					experience: 'work.company.Fit.experience.IDev',
+				},
+				{
+					period: {
+						start: new Date(2019, 0),
+						end: new Date(2020, 3),
+					},
+					name: 'work.role.engineer',
+					level: 'Trainne',
+					experience: 'work.company.Fit.experience.trainee',
+				},
+			],
+		},
+		{
+			company: 'work.company.Crud.name',
+			roles: [
+				{
+					period: {
+						start: new Date(2018, 2),
+						end: new Date(2019, 0),
+					},
+					name: 'work.role.analyst',
+					level: 'none',
+					experience: 'work.company.Crud.experience',
+				},
+			],
 		},
 	],
 };

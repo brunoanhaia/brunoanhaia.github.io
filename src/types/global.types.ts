@@ -9,4 +9,6 @@ export type GitHubProfileData = {
 export type GitHubRepositoryInfo = {
 	name: string;
 	url: string;
+	html_url: string;
+	description: string;
 };
