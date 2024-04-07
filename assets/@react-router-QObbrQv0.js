@@ -1,4 +1,4 @@
-import{r as p,R as Fr}from"./vendor-BRLD8Y-3.js";import{R as Ur}from"./@react-dom-CeIZPlmh.js";/**
+import{r as p,R as Fr}from"./@i18next-BjYT4YcG.js";import{R as Ur}from"./@react-dom-BDuJON1s.js";/**
  * @remix-run/router v1.15.3
  *
  * Copyright (c) Remix Software Inc.
