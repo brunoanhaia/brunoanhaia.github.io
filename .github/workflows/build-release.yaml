@@ -6,7 +6,8 @@ name: Node.js CI
 on:
   push:
     branches: ["develop"]
-
+  workflow_dispatch:
+    branches: ["develop"]
 jobs:
   build:
     environment: github-pages
