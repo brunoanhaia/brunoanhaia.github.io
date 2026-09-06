@@ -111,6 +111,11 @@ Detailed procedural runbooks are located in `.agents/skills/`:
 - **[New Component](file:///.agents/skills/new-component/SKILL.md)** — Conventions and guidelines for creating reusable UI components in `src/components/`.
 - **[Dependency Update](file:///.agents/skills/dependency-update/SKILL.md)** — Safe procedure for updating npm dependencies without regressions or warnings.
 - **[Deploy Troubleshooting](file:///.agents/skills/deploy-troubleshoot/SKILL.md)** — Debugging checklist for deployment issues on GitHub Pages.
+- **[Accessible UI Components](file:///.agents/skills/accessible-ui-components/SKILL.md)** — Web accessibility (WAI-ARIA, keyboard navigation, contrast, screen readers) for React 19 & MUI 9.
+- **[Clean Code Refactoring](file:///.agents/skills/clean-code-refactoring/SKILL.md)** — Clean Code rules (early returns, shallow nesting, explicit blocks, strict types, immutability).
+- **[Isolated Component Design](file:///.agents/skills/isolated-component-design/SKILL.md)** — Component-Driven Development for pure, decoupled UI elements under `src/components/`.
+- **[React Clean Architecture](file:///.agents/skills/react-clean-architecture/SKILL.md)** — Custom hooks for logic, declarative JSX, React Context usage, and separation of concerns.
+- **[Token Usage Best Practices](file:///.agents/skills/token-usage-best-practices/SKILL.md)** — Context window and token optimization principles for AI coding agents.
 
 ---
 

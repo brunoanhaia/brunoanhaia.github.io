@@ -133,6 +133,11 @@ This repository follows universal AI coding agent standards. Any coding assistan
   - [New Component](.agents/skills/new-component/SKILL.md): Standard for reusable components.
   - [Dependency Update](.agents/skills/dependency-update/SKILL.md): Safe package updates.
   - [Deploy Troubleshooting](.agents/skills/deploy-troubleshoot/SKILL.md): Fixing GitHub Pages deployments.
+  - [Accessible UI Components](.agents/skills/accessible-ui-components/SKILL.md): Web accessibility (WAI-ARIA, keyboard navigation, contrast).
+  - [Clean Code Refactoring](.agents/skills/clean-code-refactoring/SKILL.md): Early returns, shallow nesting, explicit blocks, strict types.
+  - [Isolated Component Design](.agents/skills/isolated-component-design/SKILL.md): Decoupled, pure UI component design.
+  - [React Clean Architecture](.agents/skills/react-clean-architecture/SKILL.md): Custom hooks, declarative JSX, Context patterns.
+  - [Token Usage Best Practices](.agents/skills/token-usage-best-practices/SKILL.md): Optimizing context and token consumption for agents.
 
 ---
 
