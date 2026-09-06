@@ -43,7 +43,9 @@ Personal portfolio website for Bruno Anhaia, deployed to GitHub Pages.
 │   └── app.tsx              # Root component with Suspense boundary
 ├── .cursorrules             # Cursor AI entry point
 ├── .windsurfrules           # Windsurf AI entry point
+├── AGENTS.md                # Canonical AI agent instructions
 ├── CLAUDE.md                # Claude Code entry point
+├── README.md                # Project documentation
 ├── eslint.config.js         # ESLint 9 flat config
 ├── tsconfig.json            # TypeScript config with path aliases
 ├── vite.config.ts           # Vite 8 build config
@@ -141,3 +143,10 @@ Detailed procedural runbooks are located in `.agents/skills/`:
 - Node.js is managed via **nvm**. The binary is at `~/.nvm/versions/node/<version>/bin`.
 - When running `node`, `npm`, or `npx` commands, ensure the nvm path is in `PATH`.
 - Environment variables for Firebase are prefixed with `VITE_` and stored in GitHub Secrets (not committed to the repo).
+
+### Documentation & Requirement Synchronization
+
+- When any architectural decision, script, dependency constraint, or project requirement is modified:
+  - Update `AGENTS.md` and `README.md` to reflect the change immediately.
+  - Update the relevant runbooks under `.agents/skills/` so procedural guides stay consistent and accurate.
+  - Never leave documentation or skills in an outdated or contradictory state.
