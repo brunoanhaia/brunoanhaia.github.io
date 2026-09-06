@@ -49,7 +49,7 @@ jobs:
         run: |
           git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
           git config --global user.email "githubci@users.noreply.github.com"
-          npm run release -- --release-as patch --skip.changelog
+          npm run release -- --release-as patch
           git push --follow-tags
       - name: deploy gh pages
         if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
