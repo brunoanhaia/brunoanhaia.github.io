@@ -17,7 +17,7 @@ jobs:
   build:
     environment: github-pages
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    if: "!startsWith(github.event.head_commit.message, 'chore(release):')"
     env:
       CI_COMMIT_AUTHOR: "Bruno Anhaia"
       CI_COMMIT_EMAIL: "32501648+brunoanhaia@users.noreply.github.com"

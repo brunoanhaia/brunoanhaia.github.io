@@ -9,6 +9,5 @@
     { "type": "ci", "section": "Continuous Integration" },
     { "type": "chore", "hidden": true },
     { "type": "test", "hidden": true }
-  ],
-  "releaseCommitMessageFormat": "chore(release): {{currentTag}} [skip ci]"
+  ]
 }
