@@ -88,12 +88,14 @@ Global state uses **React Context** (no external state library). Recoil was prev
 
 ## CI/CD Pipeline
 
-The GitHub Actions workflow (`.github/workflows/build-release.yaml`) triggers on pushes to `develop`:
+The GitHub Actions workflow (`.github/workflows/build-release.yaml`) triggers on pushes to `develop` (running on Node.js LTS `lts/*`):
 
 1. `npm ci` — install dependencies
-2. `npm run build` — compile (Firebase secrets are injected as env vars from GitHub Secrets)
-3. `standard-version` patch bump + push tags
-4. Deploy `dist/` to `gh-pages` branch
+2. `npm run lint` — ESLint verification
+3. `npm test` — Vitest unit tests execution
+4. `npm run build` — compile (Firebase secrets are injected as env vars from GitHub Secrets)
+5. `standard-version` patch bump + push tags
+6. Deploy `dist/` to `gh-pages` branch
 
 **GitHub Pages** must be configured to serve from the `gh-pages` branch (root).
 
@@ -120,6 +122,8 @@ Detailed procedural runbooks are located in `.agents/skills/`:
 - Use **Conventional Commits** (`feat:`, `fix:`, `refactor:`, `chore:`, `docs:`, `ci:`, `test:`).
 - **PR titles and descriptions must be in English.**
 - Branch naming: `<type>/<short-description>` (e.g., `refactor/migrate-vitest`, `fix/nav-bar-alignment`, `docs/agent-instructions`).
+- **Keep branches up-to-date with `develop`**: Before opening or updating a Pull Request, always pull or rebase/merge the latest `origin/develop` into your branch.
+- **Never submit or merge an out-of-sync PR**: Ensure that all unit tests (`npm test`), lint (`npm run lint`), and build (`npm run build`) pass against the latest `develop` state to prevent "works on my branch but breaks develop" regressions.
 
 ### Code Quality
 

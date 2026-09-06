@@ -37,6 +37,7 @@ npm run build
 
 ## 4. Submitting Changes
 
+- Always sync branch with `develop` (`git pull origin develop`) before committing or opening a PR.
 - Never push directly to `develop`.
 - Branch name format: `chore/update-<dependency>` or `refactor/<dependency>-migration`.
 - Open a PR with an English title and description explaining the upgrade and validation results.

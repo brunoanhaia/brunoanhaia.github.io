@@ -63,6 +63,6 @@ If the page needs to appear in the navigation bar:
 
 Always verify before committing:
 ```bash
-npm run lint && npm run build
+npm run lint && npm test && npm run build
 ```
 Ensure zero warnings and zero errors.
