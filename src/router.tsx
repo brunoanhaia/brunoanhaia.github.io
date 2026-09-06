@@ -16,7 +16,7 @@ const pagesMap = {
 	[pageNameConstants.work]: () => import('@src/pages/work').then((m) => ({ Component: m.WorkPage })),
 };
 
-const router = createBrowserRouter([
+const routes = [
 	{
 		path: '/',
 		lazy: pagesMap[pageNameConstants.root],
@@ -43,6 +43,8 @@ const router = createBrowserRouter([
 			},
 		],
 	},
-]);
+];
 
-export { router };
+const router = createBrowserRouter(routes);
+
+export { router, routes };
