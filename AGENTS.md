@@ -24,9 +24,8 @@ Personal portfolio website for Bruno Anhaia, deployed to GitHub Pages.
 ├── .agents/
 │   └── skills/              # Modular runbooks & skill guides
 ├── .github/
-│   ├── workflows/
-│   │   └── build-release.yaml # CI: install → lint → test → build → deploy to gh-pages
-│   └── copilot-instructions.md # GitHub Copilot entry point
+│   └── workflows/
+│       └── build-release.yaml # CI: install → lint → test → build → deploy to gh-pages
 ├── env/                     # Vite env files directory (envDir: './env')
 ├── public/                  # Static assets served as-is
 ├── src/
@@ -41,10 +40,7 @@ Personal portfolio website for Bruno Anhaia, deployed to GitHub Pages.
 │   ├── i18n.ts              # i18next configuration
 │   ├── index.tsx            # App entry point
 │   └── app.tsx              # Root component with Suspense boundary
-├── .cursorrules             # Cursor AI entry point
-├── .windsurfrules           # Windsurf AI entry point
 ├── AGENTS.md                # Canonical AI agent instructions
-├── CLAUDE.md                # Claude Code entry point
 ├── README.md                # Project documentation
 ├── eslint.config.js         # ESLint 9 flat config
 ├── tsconfig.json            # TypeScript config with path aliases

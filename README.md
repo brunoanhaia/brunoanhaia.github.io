@@ -32,9 +32,8 @@ Live website: **[https://brunoanhaia.github.io](https://brunoanhaia.github.io)**
 ├── .agents/
 │   └── skills/              # Modular runbooks & skill guides for AI agents
 ├── .github/
-│   ├── workflows/
-│   │   └── build-release.yaml # CI/CD pipeline
-│   └── copilot-instructions.md # GitHub Copilot context pointer
+│   └── workflows/
+│       └── build-release.yaml # CI/CD pipeline
 ├── env/                     # Vite env directory
 ├── public/                  # Static assets
 ├── src/
