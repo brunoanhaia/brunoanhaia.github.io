@@ -3,7 +3,14 @@ import { useFirebaseI18nTranslations } from './hooks/use-firebase-i18n-translati
 import { AppProvider } from './providers/app.provider';
 import { router } from './router';
 import { CssBaseline } from '@mui/material';
-import { Await, RouterProvider } from 'react-router-dom';
+import { use } from 'react';
+import { RouterProvider } from 'react-router-dom';
+
+const AppContent = ({ i18nLoaded }: { i18nLoaded: Promise<unknown> }) => {
+	use(i18nLoaded);
+
+	return <RouterProvider router={router} />;
+};
 
 const App = () => {
 	const i18nLoaded = useFirebaseI18nTranslations();
@@ -12,9 +19,7 @@ const App = () => {
 		<AppProvider>
 			<CssBaseline>
 				<UiSuspense>
-					<Await resolve={i18nLoaded}>
-						<RouterProvider router={router} />
-					</Await>
+					<AppContent i18nLoaded={i18nLoaded} />
 				</UiSuspense>
 			</CssBaseline>
 		</AppProvider>

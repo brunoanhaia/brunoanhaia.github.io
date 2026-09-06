@@ -1,3 +1,4 @@
+/// <reference types="vitest/config" />
 import react from '@vitejs/plugin-react';
 import { visualizer } from 'rollup-plugin-visualizer';
 import { type PluginOption, defineConfig } from 'vite';
@@ -7,6 +8,11 @@ export default defineConfig({
 	plugins: [react(), visualizer() as PluginOption],
 	resolve: {
 		tsconfigPaths: true,
+	},
+	test: {
+		globals: true,
+		environment: 'jsdom',
+		setupFiles: ['./src/setup-tests.ts'],
 	},
 	envDir: './env',
 	build: {
