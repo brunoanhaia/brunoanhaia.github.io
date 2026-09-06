@@ -19,12 +19,12 @@ jobs:
       CI_COMMIT_AUTHOR: GitHub CI
     strategy:
       matrix:
-        node-version: [20.x]
+        node-version: [22.x]
 
     steps:
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
       - uses: actions/checkout@v4
       - name: install dependencies
         run: npm ci

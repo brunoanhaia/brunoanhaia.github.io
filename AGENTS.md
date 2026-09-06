@@ -88,12 +88,14 @@ Global state uses **React Context** (no external state library). Recoil was prev
 
 ## CI/CD Pipeline
 
-The GitHub Actions workflow (`.github/workflows/build-release.yaml`) triggers on pushes to `develop`:
+The GitHub Actions workflow (`.github/workflows/build-release.yaml`) triggers on pushes to `develop` (running on Node.js `22.x`):
 
 1. `npm ci` — install dependencies
-2. `npm run build` — compile (Firebase secrets are injected as env vars from GitHub Secrets)
-3. `standard-version` patch bump + push tags
-4. Deploy `dist/` to `gh-pages` branch
+2. `npm run lint` — ESLint verification
+3. `npm test` — Vitest unit tests execution
+4. `npm run build` — compile (Firebase secrets are injected as env vars from GitHub Secrets)
+5. `standard-version` patch bump + push tags
+6. Deploy `dist/` to `gh-pages` branch
 
 **GitHub Pages** must be configured to serve from the `gh-pages` branch (root).
 

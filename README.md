@@ -61,7 +61,7 @@ Live website: **[https://brunoanhaia.github.io](https://brunoanhaia.github.io)**
 
 ### Prerequisites
 
-- **Node.js**: `v20.x` or higher (managed via [nvm](https://github.com/nvm-sh/nvm))
+- **Node.js**: `v22.x` or higher (managed via [nvm](https://github.com/nvm-sh/nvm))
 - **npm**: `v10.x` or higher
 
 ```bash

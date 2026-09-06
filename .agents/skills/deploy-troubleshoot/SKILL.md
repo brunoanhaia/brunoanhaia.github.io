@@ -19,11 +19,13 @@ Use this runbook when deployments fail or the live site is inaccessible.
 
 ## 2. GitHub Actions CI Failure on Push to `develop`
 
-The workflow in `.github/workflows/build-release.yaml` runs on pushes to `develop`:
+The workflow in `.github/workflows/build-release.yaml` runs on pushes to `develop` (using Node.js `22.x`):
 1. `npm ci`
-2. `npm run build`
-3. Release bump via `standard-version`
-4. Deploy `dist/` to `gh-pages`
+2. `npm run lint`
+3. `npm test`
+4. `npm run build`
+5. Release bump via `standard-version`
+6. Deploy `dist/` to `gh-pages`
 
 ### Troubleshooting steps:
 - **Build fails due to missing secrets**:
