@@ -20,8 +20,10 @@ export const WorkPage = () => {
 		<Stack
 			component="section"
 			direction="column"
-			justifyContent="center"
-			alignItems="center"
+			sx={{
+				justifyContent: 'center',
+				alignItems: 'center',
+			}}
 		>
 			<UiTimeline.Root sx={{ mt: '2rem' }}>
 				{timelineItemList}

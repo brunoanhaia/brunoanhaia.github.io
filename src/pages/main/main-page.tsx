@@ -1,17 +1,18 @@
 import { Avatar, Stack, Typography } from '@mui/material';
-import { gitHubProfileState } from '@src/states/global.state';
-import { useRecoilValue } from 'recoil';
+import { useGitHubProfile } from '@src/hooks/use-github-profile';
 
 export const MainPage = () => {
-	const { name, company, bio, avatarUrl } = useRecoilValue(gitHubProfileState);
+	const { name, company, bio, avatarUrl } = useGitHubProfile();
 
 	return (
 		<Stack
 			direction="column"
-			alignItems="center"
-			justifyContent="space-around"
 			spacing={2}
-			marginTop="2rem"
+			sx={{
+				alignItems: 'center',
+				justifyContent: 'space-around',
+				marginTop: '2rem',
+			}}
 		>
 			<Avatar
 				src={avatarUrl}

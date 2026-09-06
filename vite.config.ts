@@ -1,11 +1,13 @@
 import react from '@vitejs/plugin-react';
 import { visualizer } from 'rollup-plugin-visualizer';
 import { type PluginOption, defineConfig } from 'vite';
-import tsconfigPaths from 'vite-tsconfig-paths';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	plugins: [react(), tsconfigPaths(), visualizer() as PluginOption],
+	plugins: [react(), visualizer() as PluginOption],
+	resolve: {
+		tsconfigPaths: true,
+	},
 	envDir: './env',
 	build: {
 		rollupOptions: {
@@ -16,9 +18,6 @@ export default defineConfig({
 					}
 					if (id.includes('react-router-dom') || id.includes('@remix-run') || id.includes('react-router')) {
 						return '@react-router';
-					}
-					if (id.includes('recoil')) {
-						return '@recoil';
 					}
 					if (id.includes('react-dom')) {
 						return '@react-dom';

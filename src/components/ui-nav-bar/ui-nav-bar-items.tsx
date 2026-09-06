@@ -15,8 +15,10 @@ export const NavbarItems = ({ items, orientation = navbarOrientation.horizontal 
 						target={target}
 					>
 						<Typography
-							fontWeight="light"
-							fontSize="1.1em"
+							sx={{
+								fontWeight: 'light',
+								fontSize: '1.1em',
+							}}
 						>
 							{text}
 						</Typography>

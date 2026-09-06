@@ -6,7 +6,6 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { RecoilRoot } from 'recoil';
 
 const rootElement = document.getElementById('root');
 
@@ -18,11 +17,9 @@ const renderFn = () => {
 	const root = createRoot(rootElement);
 
 	root.render(
-		<RecoilRoot>
-			<StrictMode>
-				<App />
-			</StrictMode>
-		</RecoilRoot>
+		<StrictMode>
+			<App />
+		</StrictMode>
 	);
 };
 

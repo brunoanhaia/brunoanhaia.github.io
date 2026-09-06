@@ -1,7 +1,6 @@
 import { I18nTokenFormat } from '@src/types/i18n.types';
-import { initializeApp } from 'firebase/app';
+import { getApps, initializeApp } from 'firebase/app';
 import { collection, doc, getDoc, getFirestore } from 'firebase/firestore';
-import { useMemo } from 'react';
 
 const firebaseConfig = {
 	apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -13,28 +12,21 @@ const firebaseConfig = {
 	measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
+const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
+const firestore = getFirestore(app);
+
 const useFirebase = () => {
-	initializeApp(firebaseConfig);
-
-	const firestore = useMemo(() => getFirestore(), []);
-
 	return {
 		firestore,
 	};
 };
 
-const useGetFirebaseTranslations = async (lang: string) => {
-	const { firestore } = useFirebase();
+const getFirebaseTranslations = async (lang: string) => {
+	const collectionRef = collection(firestore, 'translations');
+	const langDoc = await getDoc(doc(collectionRef, lang));
 
-	const collectionRef = useMemo(() => collection(firestore, 'translations'), [firestore]);
-
-	const tokens = useMemo(async () => {
-		const langDoc = await getDoc(doc(collectionRef, lang));
-
-		return langDoc.data() as { tokens: I18nTokenFormat };
-	}, [collectionRef, lang]);
-
-	return tokens;
+	return langDoc.data() as { tokens: I18nTokenFormat };
 };
 
-export { useFirebase, useGetFirebaseTranslations };
+export { useFirebase, getFirebaseTranslations, getFirebaseTranslations as useGetFirebaseTranslations };
+

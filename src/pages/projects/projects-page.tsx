@@ -1,18 +1,18 @@
 import { GitHub } from '@mui/icons-material';
 import { List, ListItem, ListItemButton, ListItemIcon, Stack, Tooltip } from '@mui/material';
-import { gitHubProfileState } from '@src/states/global.state';
-import { GitHubProfileData } from '@src/types/global.types';
+import { useGitHubProfile } from '@src/hooks/use-github-profile';
 import { Link } from 'react-router-dom';
-import { useRecoilValue } from 'recoil';
 
 export const ProjectsPage = () => {
-	const gitHubProfileData = useRecoilValue<GitHubProfileData>(gitHubProfileState);
+	const gitHubProfileData = useGitHubProfile();
 
 	return (
 		<Stack
 			direction="column"
-			alignItems="center"
-			marginTop="2rem"
+			sx={{
+				alignItems: 'center',
+				marginTop: '2rem',
+			}}
 		>
 			<List>
 				{gitHubProfileData.repositoriesInfo.map(({ name, html_url, description }) => {
