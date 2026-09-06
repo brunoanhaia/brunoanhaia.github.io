@@ -42,6 +42,8 @@ Personal portfolio website for Bruno Anhaia, deployed to GitHub Pages.
 │   └── app.tsx              # Root component with Suspense boundary
 ├── AGENTS.md                # Canonical AI agent instructions
 ├── README.md                # Project documentation
+├── CHANGELOG.md             # Auto-generated project changelog
+├── .versionrc.json          # standard-version changelog configuration
 ├── eslint.config.js         # ESLint 9 flat config
 ├── tsconfig.json            # TypeScript config with path aliases
 ├── vite.config.ts           # Vite 8 build config
@@ -94,7 +96,7 @@ The GitHub Actions workflow (`.github/workflows/build-release.yaml`) triggers on
 2. `npm run lint` — ESLint verification
 3. `npm test` — Vitest unit tests execution
 4. `npm run build` — compile (Firebase secrets are injected as env vars from GitHub Secrets)
-5. `standard-version` patch bump + push tags
+5. `standard-version` patch bump, automatic `CHANGELOG.md` generation (configured via `.versionrc.json`), and push tags
 6. Deploy `dist/` to `gh-pages` branch
 
 **GitHub Pages** must be configured to serve from the `gh-pages` branch (root).

@@ -89,7 +89,7 @@ npm install
 | **Lint** | `npm run lint` | Run ESLint with zero-warning threshold |
 | **Test** | `npm test` | Run test suite with Vitest |
 | **Preview** | `npm run preview` | Locally preview the production build |
-| **Release** | `npm run release` | Patch release bump via standard-version |
+| **Release** | `npm run release` | Version bump & CHANGELOG.md generation via standard-version |
 
 ---
 

@@ -1,0 +1,13 @@
+{
+  "types": [
+    { "type": "feat", "section": "Features" },
+    { "type": "fix", "section": "Bug Fixes" },
+    { "type": "refactor", "section": "Code Refactoring" },
+    { "type": "perf", "section": "Performance Improvements" },
+    { "type": "docs", "section": "Documentation" },
+    { "type": "build", "section": "Build System & Dependencies" },
+    { "type": "ci", "section": "Continuous Integration" },
+    { "type": "chore", "hidden": true },
+    { "type": "test", "hidden": true }
+  ]
+}
