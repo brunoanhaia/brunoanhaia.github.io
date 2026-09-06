@@ -118,6 +118,7 @@ npm install
 - **Pull Requests**:
   - Target branch: `develop`
   - Title and description must be in **English**.
+  - Branches must be rebased/merged with the latest `origin/develop` before submission.
   - All automated checks (`npm run lint`, `npm test`, `npm run build`) must pass with **zero warnings and zero errors**.
 
 ---

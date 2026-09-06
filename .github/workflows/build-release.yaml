@@ -9,6 +9,8 @@ permissions:
 on:
   push:
     branches: ["develop"]
+  pull_request:
+    branches: ["develop"]
   workflow_dispatch:
     branches: ["develop"]
 jobs:
@@ -42,13 +44,15 @@ jobs:
           VITE_FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
           VITE_FIREBASE_MEASUREMENT_ID: ${{ secrets.FIREBASE_MEASUREMENT_ID }}
         run: npm run build --if-present
-      - name: config git
+      - name: config git & release
+        if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
         run: |
           git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
           git config --global user.email "githubci@users.noreply.github.com"
           npm run release -- --release-as patch --skip.changelog
           git push --follow-tags
       - name: deploy gh pages
+        if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

@@ -122,6 +122,8 @@ Detailed procedural runbooks are located in `.agents/skills/`:
 - Use **Conventional Commits** (`feat:`, `fix:`, `refactor:`, `chore:`, `docs:`, `ci:`, `test:`).
 - **PR titles and descriptions must be in English.**
 - Branch naming: `<type>/<short-description>` (e.g., `refactor/migrate-vitest`, `fix/nav-bar-alignment`, `docs/agent-instructions`).
+- **Keep branches up-to-date with `develop`**: Before opening or updating a Pull Request, always pull or rebase/merge the latest `origin/develop` into your branch.
+- **Never submit or merge an out-of-sync PR**: Ensure that all unit tests (`npm test`), lint (`npm run lint`), and build (`npm run build`) pass against the latest `develop` state to prevent "works on my branch but breaks develop" regressions.
 
 ### Code Quality
 

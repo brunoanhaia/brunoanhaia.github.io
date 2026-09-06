@@ -50,8 +50,8 @@ export * from './ui-<component-name>.type';
 
 ## 5. Verification
 
-Run ESLint and build:
+Run ESLint, tests, and build:
 ```bash
-npm run lint && npm run build
+npm run lint && npm test && npm run build
 ```
 Ensure unused imports are cleaned up and types compile without errors.
