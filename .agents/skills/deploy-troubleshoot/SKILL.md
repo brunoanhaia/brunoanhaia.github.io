@@ -19,7 +19,7 @@ Use this runbook when deployments fail or the live site is inaccessible.
 
 ## 2. GitHub Actions CI Failure on Push to `develop`
 
-The workflow in `.github/workflows/build-release.yaml` runs on pushes to `develop` (using Node.js `22.x`):
+The workflow in `.github/workflows/build-release.yaml` runs on pushes to `develop` (using Node.js LTS `lts/*`):
 1. `npm ci`
 2. `npm run lint`
 3. `npm test`

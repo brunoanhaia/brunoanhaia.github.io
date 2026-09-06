@@ -19,12 +19,12 @@ jobs:
       CI_COMMIT_AUTHOR: GitHub CI
     strategy:
       matrix:
-        node-version: [22.x]
+        node-version: ["lts/*"]
 
     steps:
       - uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          node-version: "lts/*"
       - uses: actions/checkout@v4
       - name: install dependencies
         run: npm ci

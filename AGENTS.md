@@ -88,7 +88,7 @@ Global state uses **React Context** (no external state library). Recoil was prev
 
 ## CI/CD Pipeline
 
-The GitHub Actions workflow (`.github/workflows/build-release.yaml`) triggers on pushes to `develop` (running on Node.js `22.x`):
+The GitHub Actions workflow (`.github/workflows/build-release.yaml`) triggers on pushes to `develop` (running on Node.js LTS `lts/*`):
 
 1. `npm ci` — install dependencies
 2. `npm run lint` — ESLint verification
