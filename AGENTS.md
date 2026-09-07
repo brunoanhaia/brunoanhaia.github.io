@@ -99,10 +99,10 @@ The GitHub Actions workflow (`.github/workflows/build-release.yaml`) triggers on
    - `npm run build` — TypeScript and Vite build compilation check
 
 2. **Deploy Job** (`deploy` — runs **strictly on commits pushed to `develop`** after `verify` passes):
-   - Checkout with full git history (`fetch-depth: 0`)
-   - `npm run build` with production Firebase secrets (`github-pages` environment)
+   - Checkout with full git history (`fetch-depth: 0`) and install dependencies (`npm ci`)
    - `commit-and-tag-version` patch bump, automatic `CHANGELOG.md` generation (configured via `.versionrc.json`), and push tags (committer: Bruno Anhaia)
-   - Deploy `dist/` to `gh-pages` branch via `peaceiris/actions-gh-pages`
+   - `npm run build` with production Firebase secrets (`github-pages` environment) — compiles assets and emits `dist/version.json` build metadata via Vite plugin
+   - Deploy `dist/` to `gh-pages` branch via `peaceiris/actions-gh-pages` with custom commit message `deploy: v<version>` and author identity
 
 **GitHub Pages** must be configured to serve from the `gh-pages` branch (root).
 
