@@ -9,13 +9,13 @@ Personal portfolio website for Bruno Anhaia, deployed to GitHub Pages.
 | Language       | TypeScript (keep on major version **5** or **6**; avoid **7**) |
 | UI Framework   | React 19                                                       |
 | Component Lib  | MUI (Material UI) 9 + Emotion                                  |
+| Animation      | Motion (formerly Framer Motion) + Lenis Smooth Scroll          |
 | Routing        | React Router 7 (`react-router-dom`)                            |
 | Build Tool     | Vite 8 (uses native `resolve.tsconfigPaths`)                   |
 | Linter         | ESLint 10 — Flat Config (`eslint.config.js`)                   |
 | Formatter      | Prettier (`.prettierrc`)                                       |
 | Test Runner    | Vitest 5 + Testing Library + jsdom                             |
-| i18n           | i18next / react-i18next                                        |
-| Analytics      | Firebase (config injected via Vite env vars at build time)     |
+| i18n           | i18next / react-i18next (bundled local JSON locales: EN & PT-BR)|
 | Deployment     | GitHub Actions → `gh-pages` branch (via `peaceiris/actions-gh-pages`) |
 
 ## Project Structure
@@ -26,20 +26,24 @@ Personal portfolio website for Bruno Anhaia, deployed to GitHub Pages.
 ├── .github/
 │   └── workflows/
 │       └── build-release.yaml # CI: install → lint → test → build → deploy to gh-pages
-├── env/                     # Vite env files directory (envDir: './env')
-├── public/                  # Static assets served as-is
+├── public/                  # Static assets served as-is (favicon.svg, manifest.json)
 ├── src/
 │   ├── components/          # Shared UI components (ui-<name> pattern)
-│   ├── contexts/            # React Contexts (theme, github-profile)
-│   ├── hooks/               # Custom hooks (e.g., use-dark-mode, use-github-profile)
-│   ├── pages/               # Route pages (main, projects, education, work)
-│   ├── providers/           # AppProvider — wraps theme + contexts
+│   ├── contexts/            # React Contexts (theme, language, github-profile)
+│   ├── hooks/               # Custom hooks (e.g., use-smooth-scroll, use-typing-animation)
+│   ├── locales/             # Localized JSON translation files (en.json, pt-BR.json)
+│   ├── pages/               # Route pages (home-page single-page container)
+│   ├── sections/            # Modular page sections (hero, experience, education, projects, blog, footer)
+│   ├── providers/           # AppProvider — wraps theme + language + contexts
 │   ├── types/               # Shared TypeScript types
 │   ├── utils/               # Utility functions
-│   ├── router.tsx           # React Router config with lazy-loaded routes
+│   ├── theme.ts             # "Crafted Dark" & Clean Light theme design tokens
+│   ├── projects.data.ts     # Curated featured projects data
+│   ├── resume.data.ts       # Structured career and education history
+│   ├── router.tsx           # React Router config
 │   ├── i18n.ts              # i18next configuration
 │   ├── index.tsx            # App entry point
-│   └── app.tsx              # Root component with Suspense boundary
+│   └── app.tsx              # Root component
 ├── AGENTS.md                # Canonical AI agent instructions
 ├── README.md                # Project documentation
 ├── CHANGELOG.md             # Auto-generated project changelog
@@ -63,19 +67,21 @@ Defined in `tsconfig.json` and resolved natively by Vite (`resolve.tsconfigPaths
 
 ## State Management
 
-Global state uses **React Context** (no external state library). Recoil was previously used and has been fully removed.
+Global state uses **React Context** (no external state library):
 
 - `GitHubProfileContext` — holds GitHub user/repo data fetched from the GitHub public API.
 - `ThemeContext` — holds the current light/dark palette mode.
-- Both are provided via `AppProvider` (`src/providers/app.provider.tsx`).
+- `LanguageContext` — holds the active language (`en` / `pt-BR`) and switches i18next runtime resources.
+- All contexts are provided via `AppProvider` (`src/providers/app.provider.tsx`).
 
 ## Key Patterns & Architectural Decisions
 
-- **Lazy routes**: All pages use React Router's `lazy` property for code splitting.
-- **Manual chunks**: Vite rollup config splits `@firebase`, `react-router`, `react-dom`, and `i18next` into separate chunks.
-- **MUI theming**: Component customizations use the `sx` prop, never MUI system props directly on elements (those were removed during the MUI 9 migration).
+- **Single-Page Architecture**: High-performance single page document with smooth scroll and deep-linking section anchors (`#hero`, `#experience`, `#education`, `#projects`, `#blog`).
+- **Motion & Micro-Interactions**: Declarative viewport animations with `motion/react`, spring progress bar, and cursor spotlight highlights.
+- **Synchronous Bundled i18n**: Translations are bundled as static JSON in `src/locales/` ensuring 100% offline resilience without external runtime database dependencies.
+- **MUI 9 Theming**: Component customizations use the `sx` prop, never MUI system props directly on elements.
 - **Component structure**: Each component lives in `src/components/ui-<name>/` with its main file, types, and a barrel `index.ts`.
-- **Page structure**: Each page lives in `src/pages/<name>/` with `<name>-page.tsx`, `<name>-page.type.ts`, and a barrel `index.ts`.
+- **Section structure**: Each section lives in `src/sections/<name>/` with its component and a barrel `index.ts`.
 
 ## NPM Scripts
 
@@ -101,28 +107,8 @@ The GitHub Actions workflow (`.github/workflows/build-release.yaml`) triggers on
 2. **Deploy Job** (`deploy` — runs **strictly on commits pushed to `develop`** after `verify` passes):
    - Checkout with full git history (`fetch-depth: 0`) and install dependencies (`npm ci`)
    - `commit-and-tag-version` patch bump, automatic `CHANGELOG.md` generation (configured via `.versionrc.json`), and push tags (committer: Bruno Anhaia)
-   - `npm run build` with production Firebase secrets (`github-pages` environment) — compiles assets and emits `dist/version.json` build metadata via Vite plugin
+   - `npm run build` — compiles assets and emits `dist/version.json` build metadata via Vite plugin
    - Deploy `dist/` to `gh-pages` branch via `peaceiris/actions-gh-pages` with custom commit message `deploy: v<version>` and author identity
-
-**GitHub Pages** must be configured to serve from the `gh-pages` branch (root).
-
-**CodeQL** is enabled via GitHub's Default Setup — no custom workflow is needed.
-
----
-
-## Skills Available
-
-Detailed procedural runbooks are located in `.agents/skills/`:
-
-- **[New Page](file:///.agents/skills/new-page/SKILL.md)** — Step-by-step guide to adding a new route page in `src/pages/` and updating the router and navigation.
-- **[New Component](file:///.agents/skills/new-component/SKILL.md)** — Conventions and guidelines for creating reusable UI components in `src/components/`.
-- **[Dependency Update](file:///.agents/skills/dependency-update/SKILL.md)** — Safe procedure for updating npm dependencies without regressions or warnings.
-- **[Deploy Troubleshooting](file:///.agents/skills/deploy-troubleshoot/SKILL.md)** — Debugging checklist for deployment issues on GitHub Pages.
-- **[Accessible UI Components](file:///.agents/skills/accessible-ui-components/SKILL.md)** — Web accessibility (WAI-ARIA, keyboard navigation, contrast, screen readers) for React 19 & MUI 9.
-- **[Clean Code Refactoring](file:///.agents/skills/clean-code-refactoring/SKILL.md)** — Clean Code rules (early returns, shallow nesting, explicit blocks, strict types, immutability).
-- **[Isolated Component Design](file:///.agents/skills/isolated-component-design/SKILL.md)** — Component-Driven Development for pure, decoupled UI elements under `src/components/`.
-- **[React Clean Architecture](file:///.agents/skills/react-clean-architecture/SKILL.md)** — Custom hooks for logic, declarative JSX, React Context usage, and separation of concerns.
-- **[Token Usage Best Practices](file:///.agents/skills/token-usage-best-practices/SKILL.md)** — Context window and token optimization principles for AI coding agents.
 
 ---
 
@@ -133,9 +119,9 @@ Detailed procedural runbooks are located in `.agents/skills/`:
 - **Never commit directly to `develop`**. Always create a feature/fix/docs/refactor branch and open a Pull Request.
 - Use **Conventional Commits** (`feat:`, `fix:`, `refactor:`, `chore:`, `docs:`, `ci:`, `test:`).
 - **PR titles and descriptions must be in English.**
-- Branch naming: `<type>/<short-description>` (e.g., `refactor/migrate-vitest`, `fix/nav-bar-alignment`, `docs/agent-instructions`).
+- Branch naming: `<type>/<short-description>` (e.g., `refactor/foundation-theme-i18n`, `feat/hero-bento-grid`).
 - **Keep branches up-to-date with `develop`**: Before opening or updating a Pull Request, always pull or rebase/merge the latest `origin/develop` into your branch.
-- **Never submit or merge an out-of-sync PR**: Ensure that all unit tests (`npm test`), lint (`npm run lint`), and build (`npm run build`) pass against the latest `develop` state to prevent "works on my branch but breaks develop" regressions.
+- **Never submit or merge an out-of-sync PR**: Ensure that all unit tests (`npm test`), lint (`npm run lint`), and build (`npm run build`) pass against the latest `develop` state to prevent regressions.
 
 ### Code Quality
 
@@ -148,17 +134,4 @@ Detailed procedural runbooks are located in `.agents/skills/`:
 - **Do NOT read `package-lock.json`** — it is very large and should never be loaded into context.
 - **TypeScript must stay below version 7.** Use the latest 5.x or 6.x.
 - When updating dependencies, check for breaking changes and compatibility before upgrading.
-- Prefer removing deprecated libraries over keeping them (e.g., Recoil was removed in favor of React Context).
-
-### Environment & Tooling
-
-- Node.js is managed via **nvm**. The binary is at `~/.nvm/versions/node/<version>/bin`.
-- When running `node`, `npm`, or `npx` commands, ensure the nvm path is in `PATH`.
-- Environment variables for Firebase are prefixed with `VITE_` and stored in GitHub Secrets (not committed to the repo).
-
-### Documentation & Requirement Synchronization
-
-- When any architectural decision, script, dependency constraint, or project requirement is modified:
-  - Update `AGENTS.md` and `README.md` to reflect the change immediately.
-  - Update the relevant runbooks under `.agents/skills/` so procedural guides stay consistent and accurate.
-  - Never leave documentation or skills in an outdated or contradictory state.
+- Prefer removing deprecated libraries over keeping them.
