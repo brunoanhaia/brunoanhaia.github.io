@@ -3,7 +3,7 @@ import { UiNavLinkProps } from './ui-nav-link.type';
 import { ListItemButton } from '@mui/material';
 import { ReactNode } from 'react';
 
-type UiNavLinkButtonProps = Exclude<UiNavLinkProps, 'chidren'> & {
+type UiNavLinkButtonProps = Omit<UiNavLinkProps, 'children'> & {
 	children: ReactNode;
 };
 

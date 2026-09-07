@@ -25,7 +25,7 @@ export const resumeData: ResumeData = {
 		{
 			institution: 'education.institution.FATEC',
 			status: 'education.status.notCompleted',
-			name: 'education.courseName.systemAnalisysAndDevelopment',
+			name: 'education.courseName.systemAnalysisAndDevelopment',
 			period: {
 				start: new Date(2017, 0),
 				end: new Date(2019, 11),
@@ -87,7 +87,7 @@ export const resumeData: ResumeData = {
 						end: new Date(2020, 3),
 					},
 					name: 'work.role.engineer',
-					level: 'Trainne',
+					level: 'Trainee',
 					experience: 'work.company.Fit.experience.trainee',
 				},
 			],

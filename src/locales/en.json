@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "home": "Home",
+    "experience": "Experience",
+    "education": "Education",
+    "projects": "Projects",
+    "blog": "Blog"
+  },
+  "hero": {
+    "role": "Lead Engineer",
+    "tagline": "Crafting scalable web platforms, design systems & engineering tools with modern React and TypeScript.",
+    "location": "Sorocaba, SP — Brazil",
+    "status": "Available for high-impact engineering",
+    "viewProjects": "View Projects",
+    "contactMe": "Get in Touch"
+  },
+  "sections": {
+    "experience": {
+      "title": "Experience",
+      "subtitle": "My professional trajectory in software engineering and technical leadership."
+    },
+    "education": {
+      "title": "Education",
+      "subtitle": "Academic background combining Electrical Engineering, international research in Japan, and Software Development."
+    },
+    "projects": {
+      "title": "Featured Projects",
+      "subtitle": "Selected open-source work, tools, and technical experiments.",
+      "viewAll": "View all on GitHub"
+    },
+    "blog": {
+      "title": "Blog",
+      "subtitle": "Writing about modern frontend architecture, TypeScript patterns, and engineering leadership.",
+      "comingSoon": "Articles Coming Soon",
+      "stayTuned": "Stay tuned for deep dives into React 19, web performance, and developer productivity."
+    },
+    "resume": {
+      "title": "Resume"
+    }
+  },
+  "education": {
+    "institution": {
+      "FACENS": "FACENS — Faculdade de Engenharia de Sorocaba",
+      "UEC": "The University of Electro-Communications (Tokyo, Japan)",
+      "FATEC": "FATEC — Faculdade de Tecnologia de Sorocaba"
+    },
+    "status": {
+      "completed": "Completed",
+      "notCompleted": "Incomplete",
+      "inProgress": "In Progress"
+    },
+    "courseName": {
+      "electricalEngineering": "Bachelor's Degree in Electrical Engineering",
+      "sandwich": "Academic Sandwich Program (Exchange in Japan)",
+      "systemAnalysisAndDevelopment": "Systems Analysis and Development"
+    }
+  },
+  "work": {
+    "company": {
+      "Fit": {
+        "name": "FIT - Instituto de Tecnologia",
+        "experience": {
+          "trainee": "Development and maintenance of web applications and internal tools.;Participation in agile ceremonies and collaborative code reviews.",
+          "IDev": "Architected and delivered frontend solutions using React and TypeScript.;Optimized build pipelines and bundle sizes for critical applications.",
+          "ILead": "Led frontend engineering initiatives and mentored software engineers.;Defined coding standards, component architecture, and automated testing strategies.",
+          "IILead": "Technical leadership across multi-disciplinary engineering teams.;Architected scalable frontend platforms with React 19, TypeScript, and automated CI/CD pipelines.;Drove engineering excellence, code quality standards, and technical roadmaps."
+        }
+      },
+      "Aegro": {
+        "name": "Aegro",
+        "experience": "Developed key features for farm management SaaS web application.;Collaborated on UI/UX redesign and frontend performance improvements."
+      },
+      "Crud": {
+        "name": "Crud",
+        "experience": "Systems analysis and web development for client enterprise solutions."
+      }
+    },
+    "role": {
+      "analyst": "Analyst",
+      "engineer": "Software Engineer",
+      "leadEngineer": "Lead Engineer"
+    },
+    "period": {
+      "current": "Present"
+    }
+  },
+  "footer": {
+    "tagline": "Building high-performance software with attention to craft and engineering discipline.",
+    "allRightsReserved": "All rights reserved.",
+    "builtWith": "Built with React 19, TypeScript, MUI 9 & Vite"
+  },
+  "common": {
+    "toggleTheme": "Toggle color mode",
+    "toggleLanguage": "Alterar para Português",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu"
+  }
+}

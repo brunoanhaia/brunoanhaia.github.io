@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "home": "Início",
+    "experience": "Experiência",
+    "education": "Formação",
+    "projects": "Projetos",
+    "blog": "Blog"
+  },
+  "hero": {
+    "role": "Lead Engineer",
+    "tagline": "Desenvolvendo plataformas web escaláveis, design systems e ferramentas de engenharia com React e TypeScript modernos.",
+    "location": "Sorocaba, SP — Brasil",
+    "status": "Disponível para iniciativas de engenharia de alto impacto",
+    "viewProjects": "Ver Projetos",
+    "contactMe": "Entrar em Contato"
+  },
+  "sections": {
+    "experience": {
+      "title": "Experiência",
+      "subtitle": "Minha trajetória profissional em engenharia de software e liderança técnica."
+    },
+    "education": {
+      "title": "Formação Acadêmica",
+      "subtitle": "Background acadêmico combinando Engenharia Elétrica, intercâmbio no Japão e Desenvolvimento de Software."
+    },
+    "projects": {
+      "title": "Projetos em Destaque",
+      "subtitle": "Trabalhos open source selecionados, ferramentas e experimentos técnicos.",
+      "viewAll": "Ver todos no GitHub"
+    },
+    "blog": {
+      "title": "Blog",
+      "subtitle": "Artigos sobre arquitetura frontend moderna, padrões TypeScript e liderança de engenharia.",
+      "comingSoon": "Artigos em Breve",
+      "stayTuned": "Fique atento para análises aprofundadas sobre React 19, performance web e produtividade dev."
+    },
+    "resume": {
+      "title": "Currículo"
+    }
+  },
+  "education": {
+    "institution": {
+      "FACENS": "FACENS — Faculdade de Engenharia de Sorocaba",
+      "UEC": "The University of Electro-Communications (Tóquio, Japão)",
+      "FATEC": "FATEC — Faculdade de Tecnologia de Sorocaba"
+    },
+    "status": {
+      "completed": "Concluído",
+      "notCompleted": "Incompleto",
+      "inProgress": "Em andamento"
+    },
+    "courseName": {
+      "electricalEngineering": "Bacharelado em Engenharia Elétrica",
+      "sandwich": "Graduação Sanduíche (Intercâmbio no Japão)",
+      "systemAnalysisAndDevelopment": "Análise e Desenvolvimento de Sistemas"
+    }
+  },
+  "work": {
+    "company": {
+      "Fit": {
+        "name": "FIT - Instituto de Tecnologia",
+        "experience": {
+          "trainee": "Desenvolvimento e manutenção de aplicações web e ferramentas internas.;Participação ativa em cerimônias ágeis e revisões colaborativas de código.",
+          "IDev": "Arquitetura e entrega de soluções frontend com React e TypeScript.;Otimização de pipelines de build e redução de bundle sizes em sistemas críticos.",
+          "ILead": "Liderança de iniciativas de engenharia frontend e mentoria de engenheiros.;Definição de padrões de código, arquitetura de componentes e testes automatizados.",
+          "IILead": "Liderança técnica em equipes multidisciplinares de engenharia.;Arquitetura de plataformas frontend escaláveis com React 19, TypeScript e CI/CD automatizado.;Direcionamento de excelência técnica, padrões de qualidade de código e roadmaps de engenharia."
+        }
+      },
+      "Aegro": {
+        "name": "Aegro",
+        "experience": "Desenvolvimento de funcionalidades críticas para aplicação web SaaS de gestão agrícola.;Colaboração no redesign de UI/UX e melhorias de performance frontend."
+      },
+      "Crud": {
+        "name": "Crud",
+        "experience": "Análise de sistemas e desenvolvimento web para soluções empresariais."
+      }
+    },
+    "role": {
+      "analyst": "Analista",
+      "engineer": "Engenheiro de Software",
+      "leadEngineer": "Engenheiro Líder"
+    },
+    "period": {
+      "current": "Atual"
+    }
+  },
+  "footer": {
+    "tagline": "Construindo software de alta performance com rigor técnico e atenção ao design.",
+    "allRightsReserved": "Todos os direitos reservados.",
+    "builtWith": "Desenvolvido com React 19, TypeScript, MUI 9 e Vite"
+  },
+  "common": {
+    "toggleTheme": "Alternar modo de cor",
+    "toggleLanguage": "Switch to English",
+    "openMenu": "Abrir menu de navegação",
+    "closeMenu": "Fechar menu de navegação"
+  }
+}
