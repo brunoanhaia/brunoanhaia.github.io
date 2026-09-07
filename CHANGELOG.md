@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.0.25](https://github.com///compare/v1.0.24...v1.0.25) (2026-09-07)
+
+### Code Refactoring
+
+* **layout:** migrate to single-page architecture with glassmorphism navbar ([#53](https://github.com///issues/53)) ([069b905](https://github.com///commit/069b905895a4b73365326005c8c7f3669e4cb360))
 ## [1.0.24](https://github.com///compare/v1.0.23...v1.0.24) (2026-09-07)
 
 ### Code Refactoring
