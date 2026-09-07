@@ -19,7 +19,7 @@ Live website: **[https://brunoanhaia.github.io](https://brunoanhaia.github.io)**
 | **React Router 7** | Client-side routing with lazy-loaded code-splitting |
 | **Vite 8** | Ultra-fast build tool and dev server |
 | **Vitest 5** | Unit testing framework (with Testing Library & jsdom) |
-| **ESLint 9** | Linting via Flat Config (`eslint.config.js`) |
+| **ESLint 10** | Linting via Flat Config (`eslint.config.js`) |
 | **i18next** | Internationalization (i18n) |
 | **Firebase** | Cloud integration (Remote Config / Analytics) |
 | **GitHub Actions** | Automated CI/CD pipeline deploying to `gh-pages` branch |
@@ -89,7 +89,7 @@ npm install
 | **Lint** | `npm run lint` | Run ESLint with zero-warning threshold |
 | **Test** | `npm test` | Run test suite with Vitest |
 | **Preview** | `npm run preview` | Locally preview the production build |
-| **Release** | `npm run release` | Version bump & CHANGELOG.md generation via standard-version |
+| **Release** | `npm run release` | Version bump & CHANGELOG.md generation via commit-and-tag-version |
 
 ---
 

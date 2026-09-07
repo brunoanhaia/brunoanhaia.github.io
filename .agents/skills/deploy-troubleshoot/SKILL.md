@@ -24,7 +24,7 @@ The workflow in `.github/workflows/build-release.yaml` runs on pushes to `develo
 2. `npm run lint`
 3. `npm test`
 4. `npm run build`
-5. Release bump via `standard-version`
+5. Release bump via `commit-and-tag-version`
 6. Deploy `dist/` to `gh-pages`
 
 ### Troubleshooting steps:

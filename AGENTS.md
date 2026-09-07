@@ -11,7 +11,7 @@ Personal portfolio website for Bruno Anhaia, deployed to GitHub Pages.
 | Component Lib  | MUI (Material UI) 9 + Emotion                                  |
 | Routing        | React Router 7 (`react-router-dom`)                            |
 | Build Tool     | Vite 8 (uses native `resolve.tsconfigPaths`)                   |
-| Linter         | ESLint 9 — Flat Config (`eslint.config.js`)                    |
+| Linter         | ESLint 10 — Flat Config (`eslint.config.js`)                   |
 | Formatter      | Prettier (`.prettierrc`)                                       |
 | Test Runner    | Vitest 5 + Testing Library + jsdom                             |
 | i18n           | i18next / react-i18next                                        |
@@ -43,8 +43,8 @@ Personal portfolio website for Bruno Anhaia, deployed to GitHub Pages.
 ├── AGENTS.md                # Canonical AI agent instructions
 ├── README.md                # Project documentation
 ├── CHANGELOG.md             # Auto-generated project changelog
-├── .versionrc.json          # standard-version changelog configuration
-├── eslint.config.js         # ESLint 9 flat config
+├── .versionrc.json          # commit-and-tag-version changelog configuration
+├── eslint.config.js         # ESLint 10 flat config
 ├── tsconfig.json            # TypeScript config with path aliases
 ├── vite.config.ts           # Vite 8 build config
 └── package.json
@@ -86,7 +86,7 @@ Global state uses **React Context** (no external state library). Recoil was prev
 | `npm run lint`    | ESLint with `--max-warnings 0`    |
 | `npm test`        | Vitest (single run)               |
 | `npm run preview` | Preview production build locally  |
-| `npm run release` | Bump version via standard-version |
+| `npm run release` | Bump version via commit-and-tag-version |
 
 ## CI/CD Pipeline
 
@@ -101,7 +101,7 @@ The GitHub Actions workflow (`.github/workflows/build-release.yaml`) triggers on
 2. **Deploy Job** (`deploy` — runs **strictly on commits pushed to `develop`** after `verify` passes):
    - Checkout with full git history (`fetch-depth: 0`)
    - `npm run build` with production Firebase secrets (`github-pages` environment)
-   - `standard-version` patch bump, automatic `CHANGELOG.md` generation (configured via `.versionrc.json`), and push tags (committer: Bruno Anhaia)
+   - `commit-and-tag-version` patch bump, automatic `CHANGELOG.md` generation (configured via `.versionrc.json`), and push tags (committer: Bruno Anhaia)
    - Deploy `dist/` to `gh-pages` branch via `peaceiris/actions-gh-pages`
 
 **GitHub Pages** must be configured to serve from the `gh-pages` branch (root).
