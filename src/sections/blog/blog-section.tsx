@@ -1,6 +1,14 @@
-import { Article as ArticleIcon, NotificationsActive as NotificationIcon } from '@mui/icons-material';
+import { Article as ArticleIcon, AutoAwesome as SparklesIcon, NotificationsActive as NotificationIcon } from '@mui/icons-material';
 import { Box, Card, Chip, Container, Stack, Typography, useTheme } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+
+const UPCOMING_TOPICS = [
+	'React 19 & Actions Architecture',
+	'Strict TypeScript Patterns',
+	'Component-Driven Design Systems',
+	'Automated CI/CD & Semantic Releases',
+	'Web Performance & Bundle Craft',
+];
 
 export const BlogSection = () => {
 	const theme = useTheme();
@@ -16,7 +24,8 @@ export const BlogSection = () => {
 			}}
 		>
 			<Container maxWidth="lg">
-				<Box sx={{ textAlign: 'center', mb: 6 }}>
+				{/* Section Header */}
+				<Box sx={{ textAlign: 'center', mb: { xs: 5, md: 7 } }}>
 					<Typography
 						variant="h2"
 						sx={{
@@ -39,9 +48,10 @@ export const BlogSection = () => {
 					</Typography>
 				</Box>
 
+				{/* Coming Soon Card */}
 				<Card
 					sx={{
-						maxWidth: 700,
+						maxWidth: 780,
 						mx: 'auto',
 						p: { xs: 4, sm: 6 },
 						textAlign: 'center',
@@ -59,8 +69,8 @@ export const BlogSection = () => {
 					>
 						<Box
 							sx={{
-								width: 60,
-								height: 60,
+								width: 64,
+								height: 64,
 								borderRadius: '16px',
 								backgroundColor: isDark ? 'rgba(0, 212, 255, 0.1)' : 'rgba(0, 145, 179, 0.1)',
 								display: 'flex',
@@ -73,7 +83,7 @@ export const BlogSection = () => {
 						</Box>
 
 						<Chip
-							label="Coming Soon"
+							label="In Progress"
 							icon={<NotificationIcon sx={{ fontSize: '14px !important' }} />}
 							size="small"
 							sx={{
@@ -86,9 +96,10 @@ export const BlogSection = () => {
 						/>
 
 						<Typography
-							variant="h5"
+							variant="h4"
 							sx={{
-								fontWeight: 700,
+								fontWeight: 800,
+								fontSize: { xs: '1.4rem', sm: '1.75rem' },
 								color: theme.palette.text.primary,
 							}}
 						>
@@ -96,15 +107,60 @@ export const BlogSection = () => {
 						</Typography>
 
 						<Typography
-							variant="body2"
+							variant="body1"
 							sx={{
 								color: theme.palette.text.secondary,
-								maxWidth: 480,
-								lineHeight: 1.6,
+								maxWidth: 540,
+								lineHeight: 1.65,
 							}}
 						>
 							{t('sections.blog.stayTuned')}
 						</Typography>
+
+						{/* Planned Topics */}
+						<Box sx={{ pt: 2, width: '100%' }}>
+							<Typography
+								variant="caption"
+								sx={{
+									color: theme.palette.primary.main,
+									fontWeight: 700,
+									letterSpacing: '0.04em',
+									textTransform: 'uppercase',
+									display: 'flex',
+									alignItems: 'center',
+									justifyContent: 'center',
+									gap: 0.5,
+									mb: 1.5,
+								}}
+							>
+								<SparklesIcon sx={{ fontSize: 14 }} />
+								Upcoming Articles
+							</Typography>
+
+							<Box
+								sx={{
+									display: 'flex',
+									flexWrap: 'wrap',
+									justifyContent: 'center',
+									gap: 1,
+								}}
+							>
+								{UPCOMING_TOPICS.map((topic) => (
+									<Chip
+										key={topic}
+										label={topic}
+										size="small"
+										sx={{
+											fontSize: '0.75rem',
+											fontWeight: 500,
+											backgroundColor: isDark ? 'rgba(255, 255, 255, 0.04)' : 'rgba(0, 0, 0, 0.04)',
+											border: isDark ? '1px solid rgba(255, 255, 255, 0.08)' : '1px solid rgba(0, 0, 0, 0.08)',
+											color: theme.palette.text.secondary,
+										}}
+									/>
+								))}
+							</Box>
+						</Box>
 					</Stack>
 				</Card>
 			</Container>

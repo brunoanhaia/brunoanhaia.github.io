@@ -1,11 +1,13 @@
-import { GitHub as GitHubIcon, LinkedIn as LinkedInIcon } from '@mui/icons-material';
-import { Box, Container, IconButton, Stack, Typography, useTheme } from '@mui/material';
+import { GitHub as GitHubIcon, KeyboardArrowUpRounded, LinkedIn as LinkedInIcon } from '@mui/icons-material';
+import { Box, Button, Container, IconButton, Stack, Typography, useTheme } from '@mui/material';
+import { useSmoothScroll } from '@src/hooks/use-smooth-scroll';
 import { useTranslation } from 'react-i18next';
 
 export const FooterSection = () => {
 	const theme = useTheme();
 	const isDark = theme.palette.mode === 'dark';
 	const { t } = useTranslation();
+	const { scrollTo } = useSmoothScroll();
 	const currentYear = new Date().getFullYear();
 
 	return (
@@ -15,7 +17,7 @@ export const FooterSection = () => {
 				py: 6,
 				mt: 8,
 				borderTop: isDark ? '1px solid rgba(255, 255, 255, 0.08)' : '1px solid rgba(0, 0, 0, 0.08)',
-				backgroundColor: isDark ? '#08080a' : '#f1f5f9',
+				backgroundColor: isDark ? '#08080a' : '#f8fafc',
 			}}
 		>
 			<Container maxWidth="lg">
@@ -24,7 +26,7 @@ export const FooterSection = () => {
 					spacing={3}
 					sx={{
 						justifyContent: 'space-between',
-						alignItems: 'center',
+						alignItems: { xs: 'center', sm: 'flex-start' },
 					}}
 				>
 					<Box sx={{ textAlign: { xs: 'center', sm: 'left' } }}>
@@ -33,6 +35,7 @@ export const FooterSection = () => {
 							sx={{
 								fontWeight: 700,
 								color: theme.palette.text.primary,
+								fontSize: '1.05rem',
 							}}
 						>
 							Bruno Anhaia
@@ -41,9 +44,10 @@ export const FooterSection = () => {
 							variant="body2"
 							sx={{
 								color: theme.palette.text.secondary,
-								fontSize: '0.85rem',
-								maxWidth: 420,
+								fontSize: '0.875rem',
+								maxWidth: 440,
 								mt: 0.5,
+								lineHeight: 1.6,
 							}}
 						>
 							{t('footer.tagline')}
@@ -64,6 +68,8 @@ export const FooterSection = () => {
 							sx={{
 								color: theme.palette.text.secondary,
 								border: isDark ? '1px solid rgba(255, 255, 255, 0.1)' : '1px solid rgba(0, 0, 0, 0.1)',
+								borderRadius: '0.75rem',
+								p: 1,
 								'&:hover': {
 									color: theme.palette.text.primary,
 									borderColor: theme.palette.primary.main,
@@ -72,6 +78,7 @@ export const FooterSection = () => {
 						>
 							<GitHubIcon sx={{ fontSize: 20 }} />
 						</IconButton>
+
 						<IconButton
 							component="a"
 							href="https://www.linkedin.com/in/anhaiabruno/"
@@ -81,6 +88,8 @@ export const FooterSection = () => {
 							sx={{
 								color: theme.palette.text.secondary,
 								border: isDark ? '1px solid rgba(255, 255, 255, 0.1)' : '1px solid rgba(0, 0, 0, 0.1)',
+								borderRadius: '0.75rem',
+								p: 1,
 								'&:hover': {
 									color: theme.palette.text.primary,
 									borderColor: theme.palette.primary.main,
@@ -89,6 +98,27 @@ export const FooterSection = () => {
 						>
 							<LinkedInIcon sx={{ fontSize: 20 }} />
 						</IconButton>
+
+						<Button
+							onClick={() => scrollTo('#hero')}
+							variant="outlined"
+							size="small"
+							startIcon={<KeyboardArrowUpRounded />}
+							aria-label="Back to top"
+							sx={{
+								borderRadius: '0.75rem',
+								color: theme.palette.text.secondary,
+								borderColor: isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)',
+								fontSize: '0.75rem',
+								fontWeight: 600,
+								'&:hover': {
+									color: theme.palette.text.primary,
+									borderColor: theme.palette.primary.main,
+								},
+							}}
+						>
+							Top
+						</Button>
 					</Stack>
 				</Stack>
 
