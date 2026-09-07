@@ -6,6 +6,10 @@ name: Node.js CI
 permissions:
   contents: write
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
 on:
   push:
     branches: ["develop"]
@@ -60,8 +64,9 @@ jobs:
         run: |
           git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
           git config --global user.email "${{ env.CI_COMMIT_EMAIL }}"
+          git pull origin develop --rebase || true
           npm run release -- --release-as patch
-          git push --follow-tags
+          git push origin develop --follow-tags
           RELEASE_VERSION=$(node -p "require('./package.json').version")
           echo "RELEASE_VERSION=$RELEASE_VERSION" >> "$GITHUB_ENV"
       - name: build with production secrets
