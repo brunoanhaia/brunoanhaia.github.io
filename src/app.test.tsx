@@ -4,18 +4,11 @@ import { beforeEach, expect, test, vi } from 'vitest';
 
 vi.mock('./router', async () => {
 	const { createMemoryRouter } = await import('react-router-dom');
-	const { RootPage } = await import('./pages/root');
-	const { MainPage } = await import('./pages/main');
+	const { HomePage } = await import('./pages/home');
 	const testRoutes = [
 		{
 			path: '/',
-			Component: RootPage,
-			children: [
-				{
-					path: '',
-					Component: MainPage,
-				},
-			],
+			Component: HomePage,
 		},
 	];
 	return {
@@ -48,6 +41,6 @@ beforeEach(() => {
 
 test('renders application with author name', async () => {
 	render(<App />);
-	const linkElement = await screen.findByText(/Bruno Anhaia/i);
-	expect(linkElement).toBeInTheDocument();
+	const elements = await screen.findAllByText(/Bruno Anhaia/i);
+	expect(elements.length).toBeGreaterThan(0);
 });
