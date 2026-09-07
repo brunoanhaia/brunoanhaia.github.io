@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.0.25](https://github.com///compare/v1.0.24...v1.0.25) (2026-09-07)
+
+### Code Refactoring
+
+* **layout:** migrate to single-page architecture with glassmorphism navbar ([#53](https://github.com///issues/53)) ([069b905](https://github.com///commit/069b905895a4b73365326005c8c7f3669e4cb360))
+## [1.0.24](https://github.com///compare/v1.0.23...v1.0.24) (2026-09-07)
+
+### Code Refactoring
+
+* **core:** setup crafted dark theme, local i18n and clean dead code ([#52](https://github.com///issues/52)) ([54c2bd2](https://github.com///commit/54c2bd23fbf7502383f09cb236861246c7b0b60b))
 ## [1.0.23](https://github.com///compare/v1.0.22...v1.0.23) (2026-09-07)
 
 ### Bug Fixes
