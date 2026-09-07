@@ -2,10 +2,6 @@ import { App } from './app';
 import { render, screen } from '@testing-library/react';
 import { beforeEach, expect, test, vi } from 'vitest';
 
-vi.mock('./hooks/use-firebase-i18n-translations', () => ({
-	useFirebaseI18nTranslations: () => Promise.resolve(true),
-}));
-
 vi.mock('./router', async () => {
 	const { createMemoryRouter } = await import('react-router-dom');
 	const { RootPage } = await import('./pages/root');

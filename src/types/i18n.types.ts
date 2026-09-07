@@ -1,5 +1,39 @@
 type I18nTokenFormat = {
+	nav: {
+		home: string;
+		experience: string;
+		education: string;
+		projects: string;
+		blog: string;
+	};
+	hero: {
+		role: string;
+		tagline: string;
+		location: string;
+		status: string;
+		viewProjects: string;
+		contactMe: string;
+	};
 	sections: {
+		experience: {
+			title: string;
+			subtitle: string;
+		};
+		education: {
+			title: string;
+			subtitle: string;
+		};
+		projects: {
+			title: string;
+			subtitle: string;
+			viewAll: string;
+		};
+		blog: {
+			title: string;
+			subtitle: string;
+			comingSoon: string;
+			stayTuned: string;
+		};
 		resume: {
 			title: string;
 		};
@@ -18,7 +52,7 @@ type I18nTokenFormat = {
 		courseName: {
 			electricalEngineering: string;
 			sandwich: string;
-			systemAnalisysAndDevelopment: string;
+			systemAnalysisAndDevelopment: string;
 		};
 	};
 	work: {
@@ -49,6 +83,17 @@ type I18nTokenFormat = {
 		period: {
 			current: string;
 		};
+	};
+	footer: {
+		tagline: string;
+		allRightsReserved: string;
+		builtWith: string;
+	};
+	common: {
+		toggleTheme: string;
+		toggleLanguage: string;
+		openMenu: string;
+		closeMenu: string;
 	};
 };
 
