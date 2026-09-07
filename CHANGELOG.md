@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.0.23](https://github.com///compare/v1.0.22...v1.0.23) (2026-09-07)
+
+### Bug Fixes
+
+* ensure github pages deployment on every release with version metadata ([#51](https://github.com///issues/51)) ([2787169](https://github.com///commit/27871691b624d8984461e3354b04ef1a2233ba06))
 ## [1.0.22](https://github.com///compare/v1.0.21...v1.0.22) (2026-09-07)
 ### [1.0.21](https://github.com/brunoanhaia/brunoanhaia.github.io/compare/v1.0.20...v1.0.21) (2026-09-07)
 
