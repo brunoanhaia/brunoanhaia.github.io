@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.0.27](https://github.com///compare/v1.0.24...v1.0.27) (2026-09-07)
+
+### Features
+
+* **blog-footer:** polish blog upcoming articles section and interactive footer ([#57](https://github.com///issues/57)) ([62d4051](https://github.com///commit/62d4051293fbe098c7c13f3251d6732f80566fd2))
+* **experience:** add interactive career milestone viewer and enhanced education cards ([#55](https://github.com///issues/55)) ([443e221](https://github.com///commit/443e221457df5c1dc66cfaefd90c40c66456e801))
+* **hero:** implement modern bento grid layout and animated terminal widget ([88d65bd](https://github.com///commit/88d65bd5096affdf910a97c12d5202df303f2d73))
+* **motion:** add declarative scroll animations, spring progress bar, and micro-interactions ([#58](https://github.com///issues/58)) ([3c75fe3](https://github.com///commit/3c75fe33de31713606c839576fd985221b48e954))
+* **projects:** add rich project cards with tech badges and live links ([#56](https://github.com///issues/56)) ([110ff92](https://github.com///commit/110ff92d40412d3d09d973f6f7bb6536a61a15aa))
+
+### Bug Fixes
+
+* **ci:** add concurrency queue and rebase strategy to release workflow ([b3d05fc](https://github.com///commit/b3d05fc91e1adcedd473429feb09752905862c99))
+* **ci:** cancel stale runs and remove redundant checkout step ([#61](https://github.com///issues/61)) ([deb8ad5](https://github.com///commit/deb8ad582b454fa2ecdf08716348161049304f17))
+* **ci:** remove git pull rebase from release step ([#62](https://github.com///issues/62)) ([8c3cdb8](https://github.com///commit/8c3cdb8f1572f3894b67a9a6788c7e51a9cd827b))
+
+### Code Refactoring
+
+* **layout:** migrate to single-page architecture with glassmorphism navbar ([#53](https://github.com///issues/53)) ([069b905](https://github.com///commit/069b905895a4b73365326005c8c7f3669e4cb360))
 ## [1.0.26](https://github.com///compare/v1.0.25...v1.0.26) (2026-09-07)
 
 ### Features
