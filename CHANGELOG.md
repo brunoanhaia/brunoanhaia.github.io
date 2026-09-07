@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.21](https://github.com/brunoanhaia/brunoanhaia.github.io/compare/v1.0.20...v1.0.21) (2026-09-07)
+
+
+### Bug Fixes
+
+* configure changelog generation, prevent CI loop, and set committer identity ([#48](https://github.com/brunoanhaia/brunoanhaia.github.io/issues/48)) ([d8d51e1](https://github.com/brunoanhaia/brunoanhaia.github.io/commit/d8d51e1af4709de6d73db0134defa6b4c0454a58))
+
+
+### Continuous Integration
+
+* separate verify and deploy jobs so deployments only run on develop commits ([#49](https://github.com/brunoanhaia/brunoanhaia.github.io/issues/49)) ([dc77ff1](https://github.com/brunoanhaia/brunoanhaia.github.io/commit/dc77ff1254dc094c20f40853b799a8bc3effd265))
+
 ### [1.0.20](https://github.com/brunoanhaia/brunoanhaia.github.io/compare/v1.0.19...v1.0.20) (2026-09-06)
 
 
@@ -158,4 +170,3 @@ All notable changes to this project will be documented in this file. See [standa
 ### [1.0.2](https://github.com/brunoanhaia/brunoanhaia.github.io/compare/v1.0.1...v1.0.2) (2023-08-06)
 
 ### 1.0.1 (2023-08-06)
-
