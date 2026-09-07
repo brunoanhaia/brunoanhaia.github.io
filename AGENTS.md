@@ -90,14 +90,19 @@ Global state uses **React Context** (no external state library). Recoil was prev
 
 ## CI/CD Pipeline
 
-The GitHub Actions workflow (`.github/workflows/build-release.yaml`) triggers on pushes to `develop` (running on Node.js LTS `lts/*`):
+The GitHub Actions workflow (`.github/workflows/build-release.yaml`) triggers on pushes to `develop` and pull requests targeting `develop` (running on Node.js LTS `lts/*`):
 
-1. `npm ci` — install dependencies
-2. `npm run lint` — ESLint verification
-3. `npm test` — Vitest unit tests execution
-4. `npm run build` — compile (Firebase secrets are injected as env vars from GitHub Secrets)
-5. `standard-version` patch bump, automatic `CHANGELOG.md` generation (configured via `.versionrc.json`), and push tags
-6. Deploy `dist/` to `gh-pages` branch
+1. **Verify Job** (`verify` — runs on PRs and pushes to `develop`):
+   - `npm ci` — install dependencies
+   - `npm run lint` — ESLint verification
+   - `npm test` — Vitest unit tests execution
+   - `npm run build` — TypeScript and Vite build compilation check
+
+2. **Deploy Job** (`deploy` — runs **strictly on commits pushed to `develop`** after `verify` passes):
+   - Checkout with full git history (`fetch-depth: 0`)
+   - `npm run build` with production Firebase secrets (`github-pages` environment)
+   - `standard-version` patch bump, automatic `CHANGELOG.md` generation (configured via `.versionrc.json`), and push tags (committer: Bruno Anhaia)
+   - Deploy `dist/` to `gh-pages` branch via `peaceiris/actions-gh-pages`
 
 **GitHub Pages** must be configured to serve from the `gh-pages` branch (root).
 
