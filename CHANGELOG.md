@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.0.26](https://github.com///compare/v1.0.25...v1.0.26) (2026-09-07)
+
+### Features
+
+* **hero:** implement modern bento grid layout and animated terminal widget ([74c82d6](https://github.com///commit/74c82d6da58a4e52989cf7a7707ad9b3ee0ba959))
+
+### Code Refactoring
+
+* **core:** setup crafted dark theme, local i18n and clean dead code ([7d0ae61](https://github.com///commit/7d0ae616d226fd6343f679f77e265825ab19d541))
+* **layout:** migrate to single-page architecture with glassmorphism navbar ([f0472be](https://github.com///commit/f0472be1f8c1b1d001ae25ac6e445b28b9d4ad29))
 ## [1.0.25](https://github.com///compare/v1.0.24...v1.0.25) (2026-09-07)
 
 ### Code Refactoring
