@@ -120,7 +120,7 @@ npm install
   - Title and description must be in **English**.
   - Branches must be rebased/merged with the latest `origin/develop` before submission.
   - All automated checks (`npm run lint`, `npm test`, `npm run build`) must pass with **zero warnings and zero errors**.
-  - Deployments to GitHub Pages and version releases occur **strictly upon push/merge into `develop`**.
+  - Deployments to GitHub Pages and version releases occur **strictly upon push/merge into `develop`** (version bumped and tagged first, assets compiled with `version.json` build metadata, and deployed to `gh-pages`).
 
 ---
 
