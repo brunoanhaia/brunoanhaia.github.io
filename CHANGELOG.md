@@ -1,7 +1,8 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.0.22](https://github.com///compare/v1.0.21...v1.0.22) (2026-09-07)
 ### [1.0.21](https://github.com/brunoanhaia/brunoanhaia.github.io/compare/v1.0.20...v1.0.21) (2026-09-07)
 
 
